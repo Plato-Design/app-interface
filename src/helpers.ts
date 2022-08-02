@@ -20,4 +20,3 @@ export function serialize(v: any) {
   }
   return v + ""
 }
-  
