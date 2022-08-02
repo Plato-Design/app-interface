@@ -21,13 +21,12 @@ export type TRecordDefaultFields = {
 
 export type TCurationFields = {
   publishedAt?: string
-  curationSelections: TCurationSelection[]
+  curationSelections: TCurationSelectionFields[]
 }
 
-export type TCurationSelection = {
-  type: number
-  collectionId?: string
-  curationId?: string
+export type TCurationSelectionFields = {
+  type: string
+  collection?: TCollectionFields
   content?: string
 }
 
@@ -41,8 +40,9 @@ export type TCollectionFields = {
 }
 
 export type TTokenFields = {
-  title: string
-  description: string
+  name: string
+  description?: string
+  tokenId: string
   tokenMediaItems: TTokenMediaItemFields[]
   tokenUrls: TTokenUrlFields[]
 }

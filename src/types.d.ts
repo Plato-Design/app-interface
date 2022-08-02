@@ -13,12 +13,11 @@ export declare type TRecordDefaultFields = {
 };
 export declare type TCurationFields = {
     publishedAt?: string;
-    curationSelections: TCurationSelection[];
+    curationSelections: TCurationSelectionFields[];
 };
-export declare type TCurationSelection = {
-    type: number;
-    collectionId?: string;
-    curationId?: string;
+export declare type TCurationSelectionFields = {
+    type: string;
+    collection?: TCollectionFields;
     content?: string;
 };
 export declare type TCollectionFields = {
@@ -30,8 +29,9 @@ export declare type TCollectionFields = {
     tokens: TTokenFields[];
 };
 export declare type TTokenFields = {
-    title: string;
-    description: string;
+    name: string;
+    description?: string;
+    tokenId: string;
     tokenMediaItems: TTokenMediaItemFields[];
     tokenUrls: TTokenUrlFields[];
 };

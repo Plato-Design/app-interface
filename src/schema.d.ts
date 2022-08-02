@@ -22,22 +22,6 @@ export declare const tRecordDefaultFieldsSchema: z.ZodObject<{
     createdAt: string;
     updatedAt: string;
 }>;
-export declare const tCurationSelectionSchema: z.ZodObject<{
-    type: z.ZodNumber;
-    collectionId: z.ZodOptional<z.ZodString>;
-    curationId: z.ZodOptional<z.ZodString>;
-    content: z.ZodOptional<z.ZodString>;
-}, "strip", z.ZodTypeAny, {
-    collectionId?: string | undefined;
-    curationId?: string | undefined;
-    content?: string | undefined;
-    type: number;
-}, {
-    collectionId?: string | undefined;
-    curationId?: string | undefined;
-    content?: string | undefined;
-    type: number;
-}>;
 export declare const tTokenMediaItemFieldsSchema: z.ZodObject<{
     type: z.ZodString;
     mime: z.ZodString;
@@ -71,44 +55,10 @@ export declare const tCollectionsListQueryDataSchema: z.ZodIntersection<z.ZodObj
     skip: number;
     take: number;
 }>, z.ZodObject<{}, "strip", z.ZodTypeAny, {}, {}>>;
-export declare const tCurationFieldsSchema: z.ZodObject<{
-    publishedAt: z.ZodOptional<z.ZodString>;
-    curationSelections: z.ZodArray<z.ZodObject<{
-        type: z.ZodNumber;
-        collectionId: z.ZodOptional<z.ZodString>;
-        curationId: z.ZodOptional<z.ZodString>;
-        content: z.ZodOptional<z.ZodString>;
-    }, "strip", z.ZodTypeAny, {
-        collectionId?: string | undefined;
-        curationId?: string | undefined;
-        content?: string | undefined;
-        type: number;
-    }, {
-        collectionId?: string | undefined;
-        curationId?: string | undefined;
-        content?: string | undefined;
-        type: number;
-    }>, "many">;
-}, "strip", z.ZodTypeAny, {
-    publishedAt?: string | undefined;
-    curationSelections: {
-        collectionId?: string | undefined;
-        curationId?: string | undefined;
-        content?: string | undefined;
-        type: number;
-    }[];
-}, {
-    publishedAt?: string | undefined;
-    curationSelections: {
-        collectionId?: string | undefined;
-        curationId?: string | undefined;
-        content?: string | undefined;
-        type: number;
-    }[];
-}>;
 export declare const tTokenFieldsSchema: z.ZodObject<{
-    title: z.ZodString;
-    description: z.ZodString;
+    name: z.ZodString;
+    description: z.ZodOptional<z.ZodString>;
+    tokenId: z.ZodString;
     tokenMediaItems: z.ZodArray<z.ZodObject<{
         type: z.ZodString;
         mime: z.ZodString;
@@ -133,8 +83,9 @@ export declare const tTokenFieldsSchema: z.ZodObject<{
         url: string;
     }>, "many">;
 }, "strip", z.ZodTypeAny, {
-    title: string;
-    description: string;
+    description?: string | undefined;
+    name: string;
+    tokenId: string;
     tokenMediaItems: {
         type: string;
         mime: string;
@@ -145,8 +96,9 @@ export declare const tTokenFieldsSchema: z.ZodObject<{
         url: string;
     }[];
 }, {
-    title: string;
-    description: string;
+    description?: string | undefined;
+    name: string;
+    tokenId: string;
     tokenMediaItems: {
         type: string;
         mime: string;
@@ -164,8 +116,9 @@ export declare const tCollectionFieldsSchema: z.ZodObject<{
     title: z.ZodString;
     description: z.ZodString;
     tokens: z.ZodArray<z.ZodObject<{
-        title: z.ZodString;
-        description: z.ZodString;
+        name: z.ZodString;
+        description: z.ZodOptional<z.ZodString>;
+        tokenId: z.ZodString;
         tokenMediaItems: z.ZodArray<z.ZodObject<{
             type: z.ZodString;
             mime: z.ZodString;
@@ -190,8 +143,9 @@ export declare const tCollectionFieldsSchema: z.ZodObject<{
             url: string;
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
-        title: string;
-        description: string;
+        description?: string | undefined;
+        name: string;
+        tokenId: string;
         tokenMediaItems: {
             type: string;
             mime: string;
@@ -202,8 +156,9 @@ export declare const tCollectionFieldsSchema: z.ZodObject<{
             url: string;
         }[];
     }, {
-        title: string;
-        description: string;
+        description?: string | undefined;
+        name: string;
+        tokenId: string;
         tokenMediaItems: {
             type: string;
             mime: string;
@@ -215,14 +170,15 @@ export declare const tCollectionFieldsSchema: z.ZodObject<{
         }[];
     }>, "many">;
 }, "strip", z.ZodTypeAny, {
-    title: string;
     description: string;
     networkName: string;
     contractAddress: string;
     thumbnailUrl: string;
+    title: string;
     tokens: {
-        title: string;
-        description: string;
+        description?: string | undefined;
+        name: string;
+        tokenId: string;
         tokenMediaItems: {
             type: string;
             mime: string;
@@ -234,14 +190,15 @@ export declare const tCollectionFieldsSchema: z.ZodObject<{
         }[];
     }[];
 }, {
-    title: string;
     description: string;
     networkName: string;
     contractAddress: string;
     thumbnailUrl: string;
+    title: string;
     tokens: {
-        title: string;
-        description: string;
+        description?: string | undefined;
+        name: string;
+        tokenId: string;
         tokenMediaItems: {
             type: string;
             mime: string;
@@ -261,8 +218,9 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
         title: z.ZodString;
         description: z.ZodString;
         tokens: z.ZodArray<z.ZodObject<{
-            title: z.ZodString;
-            description: z.ZodString;
+            name: z.ZodString;
+            description: z.ZodOptional<z.ZodString>;
+            tokenId: z.ZodString;
             tokenMediaItems: z.ZodArray<z.ZodObject<{
                 type: z.ZodString;
                 mime: z.ZodString;
@@ -287,8 +245,9 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
                 url: string;
             }>, "many">;
         }, "strip", z.ZodTypeAny, {
-            title: string;
-            description: string;
+            description?: string | undefined;
+            name: string;
+            tokenId: string;
             tokenMediaItems: {
                 type: string;
                 mime: string;
@@ -299,8 +258,9 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
                 url: string;
             }[];
         }, {
-            title: string;
-            description: string;
+            description?: string | undefined;
+            name: string;
+            tokenId: string;
             tokenMediaItems: {
                 type: string;
                 mime: string;
@@ -312,14 +272,15 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
             }[];
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
-        title: string;
         description: string;
         networkName: string;
         contractAddress: string;
         thumbnailUrl: string;
+        title: string;
         tokens: {
-            title: string;
-            description: string;
+            description?: string | undefined;
+            name: string;
+            tokenId: string;
             tokenMediaItems: {
                 type: string;
                 mime: string;
@@ -331,14 +292,15 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
             }[];
         }[];
     }, {
-        title: string;
         description: string;
         networkName: string;
         contractAddress: string;
         thumbnailUrl: string;
+        title: string;
         tokens: {
-            title: string;
-            description: string;
+            description?: string | undefined;
+            name: string;
+            tokenId: string;
             tokenMediaItems: {
                 type: string;
                 mime: string;
@@ -352,14 +314,15 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
     }>, "many">;
 }, "strip", z.ZodTypeAny, {
     collections: {
-        title: string;
         description: string;
         networkName: string;
         contractAddress: string;
         thumbnailUrl: string;
+        title: string;
         tokens: {
-            title: string;
-            description: string;
+            description?: string | undefined;
+            name: string;
+            tokenId: string;
             tokenMediaItems: {
                 type: string;
                 mime: string;
@@ -373,14 +336,15 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
     }[];
 }, {
     collections: {
-        title: string;
         description: string;
         networkName: string;
         contractAddress: string;
         thumbnailUrl: string;
+        title: string;
         tokens: {
-            title: string;
-            description: string;
+            description?: string | undefined;
+            name: string;
+            tokenId: string;
             tokenMediaItems: {
                 type: string;
                 mime: string;
@@ -391,5 +355,368 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
                 url: string;
             }[];
         }[];
+    }[];
+}>;
+export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
+    type: z.ZodString;
+    collection: z.ZodOptional<z.ZodObject<{
+        networkName: z.ZodString;
+        contractAddress: z.ZodString;
+        thumbnailUrl: z.ZodString;
+        title: z.ZodString;
+        description: z.ZodString;
+        tokens: z.ZodArray<z.ZodObject<{
+            name: z.ZodString;
+            description: z.ZodOptional<z.ZodString>;
+            tokenId: z.ZodString;
+            tokenMediaItems: z.ZodArray<z.ZodObject<{
+                type: z.ZodString;
+                mime: z.ZodString;
+                url: z.ZodString;
+            }, "strip", z.ZodTypeAny, {
+                type: string;
+                mime: string;
+                url: string;
+            }, {
+                type: string;
+                mime: string;
+                url: string;
+            }>, "many">;
+            tokenUrls: z.ZodArray<z.ZodObject<{
+                type: z.ZodString;
+                url: z.ZodString;
+            }, "strip", z.ZodTypeAny, {
+                type: string;
+                url: string;
+            }, {
+                type: string;
+                url: string;
+            }>, "many">;
+        }, "strip", z.ZodTypeAny, {
+            description?: string | undefined;
+            name: string;
+            tokenId: string;
+            tokenMediaItems: {
+                type: string;
+                mime: string;
+                url: string;
+            }[];
+            tokenUrls: {
+                type: string;
+                url: string;
+            }[];
+        }, {
+            description?: string | undefined;
+            name: string;
+            tokenId: string;
+            tokenMediaItems: {
+                type: string;
+                mime: string;
+                url: string;
+            }[];
+            tokenUrls: {
+                type: string;
+                url: string;
+            }[];
+        }>, "many">;
+    }, "strip", z.ZodTypeAny, {
+        description: string;
+        networkName: string;
+        contractAddress: string;
+        thumbnailUrl: string;
+        title: string;
+        tokens: {
+            description?: string | undefined;
+            name: string;
+            tokenId: string;
+            tokenMediaItems: {
+                type: string;
+                mime: string;
+                url: string;
+            }[];
+            tokenUrls: {
+                type: string;
+                url: string;
+            }[];
+        }[];
+    }, {
+        description: string;
+        networkName: string;
+        contractAddress: string;
+        thumbnailUrl: string;
+        title: string;
+        tokens: {
+            description?: string | undefined;
+            name: string;
+            tokenId: string;
+            tokenMediaItems: {
+                type: string;
+                mime: string;
+                url: string;
+            }[];
+            tokenUrls: {
+                type: string;
+                url: string;
+            }[];
+        }[];
+    }>>;
+    content: z.ZodOptional<z.ZodString>;
+}, "strip", z.ZodTypeAny, {
+    collection?: {
+        description: string;
+        networkName: string;
+        contractAddress: string;
+        thumbnailUrl: string;
+        title: string;
+        tokens: {
+            description?: string | undefined;
+            name: string;
+            tokenId: string;
+            tokenMediaItems: {
+                type: string;
+                mime: string;
+                url: string;
+            }[];
+            tokenUrls: {
+                type: string;
+                url: string;
+            }[];
+        }[];
+    } | undefined;
+    content?: string | undefined;
+    type: string;
+}, {
+    collection?: {
+        description: string;
+        networkName: string;
+        contractAddress: string;
+        thumbnailUrl: string;
+        title: string;
+        tokens: {
+            description?: string | undefined;
+            name: string;
+            tokenId: string;
+            tokenMediaItems: {
+                type: string;
+                mime: string;
+                url: string;
+            }[];
+            tokenUrls: {
+                type: string;
+                url: string;
+            }[];
+        }[];
+    } | undefined;
+    content?: string | undefined;
+    type: string;
+}>;
+export declare const tCurationFieldsSchema: z.ZodObject<{
+    publishedAt: z.ZodOptional<z.ZodString>;
+    curationSelections: z.ZodArray<z.ZodObject<{
+        type: z.ZodString;
+        collection: z.ZodOptional<z.ZodObject<{
+            networkName: z.ZodString;
+            contractAddress: z.ZodString;
+            thumbnailUrl: z.ZodString;
+            title: z.ZodString;
+            description: z.ZodString;
+            tokens: z.ZodArray<z.ZodObject<{
+                name: z.ZodString;
+                description: z.ZodOptional<z.ZodString>;
+                tokenId: z.ZodString;
+                tokenMediaItems: z.ZodArray<z.ZodObject<{
+                    type: z.ZodString;
+                    mime: z.ZodString;
+                    url: z.ZodString;
+                }, "strip", z.ZodTypeAny, {
+                    type: string;
+                    mime: string;
+                    url: string;
+                }, {
+                    type: string;
+                    mime: string;
+                    url: string;
+                }>, "many">;
+                tokenUrls: z.ZodArray<z.ZodObject<{
+                    type: z.ZodString;
+                    url: z.ZodString;
+                }, "strip", z.ZodTypeAny, {
+                    type: string;
+                    url: string;
+                }, {
+                    type: string;
+                    url: string;
+                }>, "many">;
+            }, "strip", z.ZodTypeAny, {
+                description?: string | undefined;
+                name: string;
+                tokenId: string;
+                tokenMediaItems: {
+                    type: string;
+                    mime: string;
+                    url: string;
+                }[];
+                tokenUrls: {
+                    type: string;
+                    url: string;
+                }[];
+            }, {
+                description?: string | undefined;
+                name: string;
+                tokenId: string;
+                tokenMediaItems: {
+                    type: string;
+                    mime: string;
+                    url: string;
+                }[];
+                tokenUrls: {
+                    type: string;
+                    url: string;
+                }[];
+            }>, "many">;
+        }, "strip", z.ZodTypeAny, {
+            description: string;
+            networkName: string;
+            contractAddress: string;
+            thumbnailUrl: string;
+            title: string;
+            tokens: {
+                description?: string | undefined;
+                name: string;
+                tokenId: string;
+                tokenMediaItems: {
+                    type: string;
+                    mime: string;
+                    url: string;
+                }[];
+                tokenUrls: {
+                    type: string;
+                    url: string;
+                }[];
+            }[];
+        }, {
+            description: string;
+            networkName: string;
+            contractAddress: string;
+            thumbnailUrl: string;
+            title: string;
+            tokens: {
+                description?: string | undefined;
+                name: string;
+                tokenId: string;
+                tokenMediaItems: {
+                    type: string;
+                    mime: string;
+                    url: string;
+                }[];
+                tokenUrls: {
+                    type: string;
+                    url: string;
+                }[];
+            }[];
+        }>>;
+        content: z.ZodOptional<z.ZodString>;
+    }, "strip", z.ZodTypeAny, {
+        collection?: {
+            description: string;
+            networkName: string;
+            contractAddress: string;
+            thumbnailUrl: string;
+            title: string;
+            tokens: {
+                description?: string | undefined;
+                name: string;
+                tokenId: string;
+                tokenMediaItems: {
+                    type: string;
+                    mime: string;
+                    url: string;
+                }[];
+                tokenUrls: {
+                    type: string;
+                    url: string;
+                }[];
+            }[];
+        } | undefined;
+        content?: string | undefined;
+        type: string;
+    }, {
+        collection?: {
+            description: string;
+            networkName: string;
+            contractAddress: string;
+            thumbnailUrl: string;
+            title: string;
+            tokens: {
+                description?: string | undefined;
+                name: string;
+                tokenId: string;
+                tokenMediaItems: {
+                    type: string;
+                    mime: string;
+                    url: string;
+                }[];
+                tokenUrls: {
+                    type: string;
+                    url: string;
+                }[];
+            }[];
+        } | undefined;
+        content?: string | undefined;
+        type: string;
+    }>, "many">;
+}, "strip", z.ZodTypeAny, {
+    publishedAt?: string | undefined;
+    curationSelections: {
+        collection?: {
+            description: string;
+            networkName: string;
+            contractAddress: string;
+            thumbnailUrl: string;
+            title: string;
+            tokens: {
+                description?: string | undefined;
+                name: string;
+                tokenId: string;
+                tokenMediaItems: {
+                    type: string;
+                    mime: string;
+                    url: string;
+                }[];
+                tokenUrls: {
+                    type: string;
+                    url: string;
+                }[];
+            }[];
+        } | undefined;
+        content?: string | undefined;
+        type: string;
+    }[];
+}, {
+    publishedAt?: string | undefined;
+    curationSelections: {
+        collection?: {
+            description: string;
+            networkName: string;
+            contractAddress: string;
+            thumbnailUrl: string;
+            title: string;
+            tokens: {
+                description?: string | undefined;
+                name: string;
+                tokenId: string;
+                tokenMediaItems: {
+                    type: string;
+                    mime: string;
+                    url: string;
+                }[];
+                tokenUrls: {
+                    type: string;
+                    url: string;
+                }[];
+            }[];
+        } | undefined;
+        content?: string | undefined;
+        type: string;
     }[];
 }>;

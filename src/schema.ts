@@ -12,13 +12,6 @@ export const tRecordDefaultFieldsSchema = z.object({
   updatedAt: z.string(),
 });
 
-export const tCurationSelectionSchema = z.object({
-  type: z.number(),
-  collectionId: z.string().optional(),
-  curationId: z.string().optional(),
-  content: z.string().optional(),
-});
-
 export const tTokenMediaItemFieldsSchema = z.object({
   type: z.string(),
   mime: z.string(),
@@ -34,14 +27,10 @@ export const tCollectionsListQueryDataSchema = tPaginatedEndpointQueryDataSchema
   z.object({})
 );
 
-export const tCurationFieldsSchema = z.object({
-  publishedAt: z.string().optional(),
-  curationSelections: z.array(tCurationSelectionSchema),
-});
-
 export const tTokenFieldsSchema = z.object({
-  title: z.string(),
-  description: z.string(),
+  name: z.string(),
+  description: z.string().optional(),
+  tokenId: z.string(),
   tokenMediaItems: z.array(tTokenMediaItemFieldsSchema),
   tokenUrls: z.array(tTokenUrlFieldsSchema),
 });
@@ -57,4 +46,15 @@ export const tCollectionFieldsSchema = z.object({
 
 export const tCollectionsListResponseDataSchema = z.object({
   collections: z.array(tCollectionFieldsSchema),
+});
+
+export const tCurationSelectionFieldsSchema = z.object({
+  type: z.string(),
+  collection: tCollectionFieldsSchema.optional(),
+  content: z.string().optional(),
+});
+
+export const tCurationFieldsSchema = z.object({
+  publishedAt: z.string().optional(),
+  curationSelections: z.array(tCurationSelectionFieldsSchema),
 });
