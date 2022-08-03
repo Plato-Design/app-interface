@@ -22,18 +22,40 @@ export declare const tRecordDefaultFieldsSchema: z.ZodObject<{
     createdAt: string;
     updatedAt: string;
 }>;
+export declare const tClaimPhaseFieldsSchema: z.ZodObject<{
+    mintMethod: z.ZodString;
+    mintArgs: z.ZodString;
+    mintStartAt: z.ZodString;
+    mintEndAt: z.ZodString;
+    mintPriceInWei: z.ZodString;
+    mintSupply: z.ZodNumber;
+}, "strip", z.ZodTypeAny, {
+    mintMethod: string;
+    mintArgs: string;
+    mintStartAt: string;
+    mintEndAt: string;
+    mintPriceInWei: string;
+    mintSupply: number;
+}, {
+    mintMethod: string;
+    mintArgs: string;
+    mintStartAt: string;
+    mintEndAt: string;
+    mintPriceInWei: string;
+    mintSupply: number;
+}>;
 export declare const tTokenMediaItemFieldsSchema: z.ZodObject<{
     type: z.ZodString;
     mime: z.ZodString;
-    url: z.ZodString;
+    uri: z.ZodString;
 }, "strip", z.ZodTypeAny, {
     type: string;
     mime: string;
-    url: string;
+    uri: string;
 }, {
     type: string;
     mime: string;
-    url: string;
+    uri: string;
 }>;
 export declare const tTokenUrlFieldsSchema: z.ZodObject<{
     type: z.ZodString;
@@ -62,15 +84,15 @@ export declare const tTokenFieldsSchema: z.ZodObject<{
     tokenMediaItems: z.ZodArray<z.ZodObject<{
         type: z.ZodString;
         mime: z.ZodString;
-        url: z.ZodString;
+        uri: z.ZodString;
     }, "strip", z.ZodTypeAny, {
         type: string;
         mime: string;
-        url: string;
+        uri: string;
     }, {
         type: string;
         mime: string;
-        url: string;
+        uri: string;
     }>, "many">;
     tokenUrls: z.ZodArray<z.ZodObject<{
         type: z.ZodString;
@@ -89,7 +111,7 @@ export declare const tTokenFieldsSchema: z.ZodObject<{
     tokenMediaItems: {
         type: string;
         mime: string;
-        url: string;
+        uri: string;
     }[];
     tokenUrls: {
         type: string;
@@ -102,7 +124,7 @@ export declare const tTokenFieldsSchema: z.ZodObject<{
     tokenMediaItems: {
         type: string;
         mime: string;
-        url: string;
+        uri: string;
     }[];
     tokenUrls: {
         type: string;
@@ -122,15 +144,15 @@ export declare const tCollectionFieldsSchema: z.ZodObject<{
         tokenMediaItems: z.ZodArray<z.ZodObject<{
             type: z.ZodString;
             mime: z.ZodString;
-            url: z.ZodString;
+            uri: z.ZodString;
         }, "strip", z.ZodTypeAny, {
             type: string;
             mime: string;
-            url: string;
+            uri: string;
         }, {
             type: string;
             mime: string;
-            url: string;
+            uri: string;
         }>, "many">;
         tokenUrls: z.ZodArray<z.ZodObject<{
             type: z.ZodString;
@@ -149,7 +171,7 @@ export declare const tCollectionFieldsSchema: z.ZodObject<{
         tokenMediaItems: {
             type: string;
             mime: string;
-            url: string;
+            uri: string;
         }[];
         tokenUrls: {
             type: string;
@@ -162,12 +184,34 @@ export declare const tCollectionFieldsSchema: z.ZodObject<{
         tokenMediaItems: {
             type: string;
             mime: string;
-            url: string;
+            uri: string;
         }[];
         tokenUrls: {
             type: string;
             url: string;
         }[];
+    }>, "many">;
+    claimPhases: z.ZodArray<z.ZodObject<{
+        mintMethod: z.ZodString;
+        mintArgs: z.ZodString;
+        mintStartAt: z.ZodString;
+        mintEndAt: z.ZodString;
+        mintPriceInWei: z.ZodString;
+        mintSupply: z.ZodNumber;
+    }, "strip", z.ZodTypeAny, {
+        mintMethod: string;
+        mintArgs: string;
+        mintStartAt: string;
+        mintEndAt: string;
+        mintPriceInWei: string;
+        mintSupply: number;
+    }, {
+        mintMethod: string;
+        mintArgs: string;
+        mintStartAt: string;
+        mintEndAt: string;
+        mintPriceInWei: string;
+        mintSupply: number;
     }>, "many">;
 }, "strip", z.ZodTypeAny, {
     description: string;
@@ -182,12 +226,20 @@ export declare const tCollectionFieldsSchema: z.ZodObject<{
         tokenMediaItems: {
             type: string;
             mime: string;
-            url: string;
+            uri: string;
         }[];
         tokenUrls: {
             type: string;
             url: string;
         }[];
+    }[];
+    claimPhases: {
+        mintMethod: string;
+        mintArgs: string;
+        mintStartAt: string;
+        mintEndAt: string;
+        mintPriceInWei: string;
+        mintSupply: number;
     }[];
 }, {
     description: string;
@@ -202,12 +254,20 @@ export declare const tCollectionFieldsSchema: z.ZodObject<{
         tokenMediaItems: {
             type: string;
             mime: string;
-            url: string;
+            uri: string;
         }[];
         tokenUrls: {
             type: string;
             url: string;
         }[];
+    }[];
+    claimPhases: {
+        mintMethod: string;
+        mintArgs: string;
+        mintStartAt: string;
+        mintEndAt: string;
+        mintPriceInWei: string;
+        mintSupply: number;
     }[];
 }>;
 export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
@@ -224,15 +284,15 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
             tokenMediaItems: z.ZodArray<z.ZodObject<{
                 type: z.ZodString;
                 mime: z.ZodString;
-                url: z.ZodString;
+                uri: z.ZodString;
             }, "strip", z.ZodTypeAny, {
                 type: string;
                 mime: string;
-                url: string;
+                uri: string;
             }, {
                 type: string;
                 mime: string;
-                url: string;
+                uri: string;
             }>, "many">;
             tokenUrls: z.ZodArray<z.ZodObject<{
                 type: z.ZodString;
@@ -251,7 +311,7 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
             tokenMediaItems: {
                 type: string;
                 mime: string;
-                url: string;
+                uri: string;
             }[];
             tokenUrls: {
                 type: string;
@@ -264,12 +324,34 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
             tokenMediaItems: {
                 type: string;
                 mime: string;
-                url: string;
+                uri: string;
             }[];
             tokenUrls: {
                 type: string;
                 url: string;
             }[];
+        }>, "many">;
+        claimPhases: z.ZodArray<z.ZodObject<{
+            mintMethod: z.ZodString;
+            mintArgs: z.ZodString;
+            mintStartAt: z.ZodString;
+            mintEndAt: z.ZodString;
+            mintPriceInWei: z.ZodString;
+            mintSupply: z.ZodNumber;
+        }, "strip", z.ZodTypeAny, {
+            mintMethod: string;
+            mintArgs: string;
+            mintStartAt: string;
+            mintEndAt: string;
+            mintPriceInWei: string;
+            mintSupply: number;
+        }, {
+            mintMethod: string;
+            mintArgs: string;
+            mintStartAt: string;
+            mintEndAt: string;
+            mintPriceInWei: string;
+            mintSupply: number;
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         description: string;
@@ -284,12 +366,20 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
             tokenMediaItems: {
                 type: string;
                 mime: string;
-                url: string;
+                uri: string;
             }[];
             tokenUrls: {
                 type: string;
                 url: string;
             }[];
+        }[];
+        claimPhases: {
+            mintMethod: string;
+            mintArgs: string;
+            mintStartAt: string;
+            mintEndAt: string;
+            mintPriceInWei: string;
+            mintSupply: number;
         }[];
     }, {
         description: string;
@@ -304,12 +394,20 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
             tokenMediaItems: {
                 type: string;
                 mime: string;
-                url: string;
+                uri: string;
             }[];
             tokenUrls: {
                 type: string;
                 url: string;
             }[];
+        }[];
+        claimPhases: {
+            mintMethod: string;
+            mintArgs: string;
+            mintStartAt: string;
+            mintEndAt: string;
+            mintPriceInWei: string;
+            mintSupply: number;
         }[];
     }>, "many">;
 }, "strip", z.ZodTypeAny, {
@@ -326,12 +424,20 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
             tokenMediaItems: {
                 type: string;
                 mime: string;
-                url: string;
+                uri: string;
             }[];
             tokenUrls: {
                 type: string;
                 url: string;
             }[];
+        }[];
+        claimPhases: {
+            mintMethod: string;
+            mintArgs: string;
+            mintStartAt: string;
+            mintEndAt: string;
+            mintPriceInWei: string;
+            mintSupply: number;
         }[];
     }[];
 }, {
@@ -348,12 +454,20 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
             tokenMediaItems: {
                 type: string;
                 mime: string;
-                url: string;
+                uri: string;
             }[];
             tokenUrls: {
                 type: string;
                 url: string;
             }[];
+        }[];
+        claimPhases: {
+            mintMethod: string;
+            mintArgs: string;
+            mintStartAt: string;
+            mintEndAt: string;
+            mintPriceInWei: string;
+            mintSupply: number;
         }[];
     }[];
 }>;
@@ -372,15 +486,15 @@ export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
             tokenMediaItems: z.ZodArray<z.ZodObject<{
                 type: z.ZodString;
                 mime: z.ZodString;
-                url: z.ZodString;
+                uri: z.ZodString;
             }, "strip", z.ZodTypeAny, {
                 type: string;
                 mime: string;
-                url: string;
+                uri: string;
             }, {
                 type: string;
                 mime: string;
-                url: string;
+                uri: string;
             }>, "many">;
             tokenUrls: z.ZodArray<z.ZodObject<{
                 type: z.ZodString;
@@ -399,7 +513,7 @@ export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
             tokenMediaItems: {
                 type: string;
                 mime: string;
-                url: string;
+                uri: string;
             }[];
             tokenUrls: {
                 type: string;
@@ -412,12 +526,34 @@ export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
             tokenMediaItems: {
                 type: string;
                 mime: string;
-                url: string;
+                uri: string;
             }[];
             tokenUrls: {
                 type: string;
                 url: string;
             }[];
+        }>, "many">;
+        claimPhases: z.ZodArray<z.ZodObject<{
+            mintMethod: z.ZodString;
+            mintArgs: z.ZodString;
+            mintStartAt: z.ZodString;
+            mintEndAt: z.ZodString;
+            mintPriceInWei: z.ZodString;
+            mintSupply: z.ZodNumber;
+        }, "strip", z.ZodTypeAny, {
+            mintMethod: string;
+            mintArgs: string;
+            mintStartAt: string;
+            mintEndAt: string;
+            mintPriceInWei: string;
+            mintSupply: number;
+        }, {
+            mintMethod: string;
+            mintArgs: string;
+            mintStartAt: string;
+            mintEndAt: string;
+            mintPriceInWei: string;
+            mintSupply: number;
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         description: string;
@@ -432,12 +568,20 @@ export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
             tokenMediaItems: {
                 type: string;
                 mime: string;
-                url: string;
+                uri: string;
             }[];
             tokenUrls: {
                 type: string;
                 url: string;
             }[];
+        }[];
+        claimPhases: {
+            mintMethod: string;
+            mintArgs: string;
+            mintStartAt: string;
+            mintEndAt: string;
+            mintPriceInWei: string;
+            mintSupply: number;
         }[];
     }, {
         description: string;
@@ -452,12 +596,20 @@ export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
             tokenMediaItems: {
                 type: string;
                 mime: string;
-                url: string;
+                uri: string;
             }[];
             tokenUrls: {
                 type: string;
                 url: string;
             }[];
+        }[];
+        claimPhases: {
+            mintMethod: string;
+            mintArgs: string;
+            mintStartAt: string;
+            mintEndAt: string;
+            mintPriceInWei: string;
+            mintSupply: number;
         }[];
     }>>;
     content: z.ZodOptional<z.ZodString>;
@@ -475,12 +627,20 @@ export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
             tokenMediaItems: {
                 type: string;
                 mime: string;
-                url: string;
+                uri: string;
             }[];
             tokenUrls: {
                 type: string;
                 url: string;
             }[];
+        }[];
+        claimPhases: {
+            mintMethod: string;
+            mintArgs: string;
+            mintStartAt: string;
+            mintEndAt: string;
+            mintPriceInWei: string;
+            mintSupply: number;
         }[];
     } | undefined;
     content?: string | undefined;
@@ -499,12 +659,20 @@ export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
             tokenMediaItems: {
                 type: string;
                 mime: string;
-                url: string;
+                uri: string;
             }[];
             tokenUrls: {
                 type: string;
                 url: string;
             }[];
+        }[];
+        claimPhases: {
+            mintMethod: string;
+            mintArgs: string;
+            mintStartAt: string;
+            mintEndAt: string;
+            mintPriceInWei: string;
+            mintSupply: number;
         }[];
     } | undefined;
     content?: string | undefined;
@@ -527,15 +695,15 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
                 tokenMediaItems: z.ZodArray<z.ZodObject<{
                     type: z.ZodString;
                     mime: z.ZodString;
-                    url: z.ZodString;
+                    uri: z.ZodString;
                 }, "strip", z.ZodTypeAny, {
                     type: string;
                     mime: string;
-                    url: string;
+                    uri: string;
                 }, {
                     type: string;
                     mime: string;
-                    url: string;
+                    uri: string;
                 }>, "many">;
                 tokenUrls: z.ZodArray<z.ZodObject<{
                     type: z.ZodString;
@@ -554,7 +722,7 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
                 tokenMediaItems: {
                     type: string;
                     mime: string;
-                    url: string;
+                    uri: string;
                 }[];
                 tokenUrls: {
                     type: string;
@@ -567,12 +735,34 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
                 tokenMediaItems: {
                     type: string;
                     mime: string;
-                    url: string;
+                    uri: string;
                 }[];
                 tokenUrls: {
                     type: string;
                     url: string;
                 }[];
+            }>, "many">;
+            claimPhases: z.ZodArray<z.ZodObject<{
+                mintMethod: z.ZodString;
+                mintArgs: z.ZodString;
+                mintStartAt: z.ZodString;
+                mintEndAt: z.ZodString;
+                mintPriceInWei: z.ZodString;
+                mintSupply: z.ZodNumber;
+            }, "strip", z.ZodTypeAny, {
+                mintMethod: string;
+                mintArgs: string;
+                mintStartAt: string;
+                mintEndAt: string;
+                mintPriceInWei: string;
+                mintSupply: number;
+            }, {
+                mintMethod: string;
+                mintArgs: string;
+                mintStartAt: string;
+                mintEndAt: string;
+                mintPriceInWei: string;
+                mintSupply: number;
             }>, "many">;
         }, "strip", z.ZodTypeAny, {
             description: string;
@@ -587,12 +777,20 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
                 tokenMediaItems: {
                     type: string;
                     mime: string;
-                    url: string;
+                    uri: string;
                 }[];
                 tokenUrls: {
                     type: string;
                     url: string;
                 }[];
+            }[];
+            claimPhases: {
+                mintMethod: string;
+                mintArgs: string;
+                mintStartAt: string;
+                mintEndAt: string;
+                mintPriceInWei: string;
+                mintSupply: number;
             }[];
         }, {
             description: string;
@@ -607,12 +805,20 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
                 tokenMediaItems: {
                     type: string;
                     mime: string;
-                    url: string;
+                    uri: string;
                 }[];
                 tokenUrls: {
                     type: string;
                     url: string;
                 }[];
+            }[];
+            claimPhases: {
+                mintMethod: string;
+                mintArgs: string;
+                mintStartAt: string;
+                mintEndAt: string;
+                mintPriceInWei: string;
+                mintSupply: number;
             }[];
         }>>;
         content: z.ZodOptional<z.ZodString>;
@@ -630,12 +836,20 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
                 tokenMediaItems: {
                     type: string;
                     mime: string;
-                    url: string;
+                    uri: string;
                 }[];
                 tokenUrls: {
                     type: string;
                     url: string;
                 }[];
+            }[];
+            claimPhases: {
+                mintMethod: string;
+                mintArgs: string;
+                mintStartAt: string;
+                mintEndAt: string;
+                mintPriceInWei: string;
+                mintSupply: number;
             }[];
         } | undefined;
         content?: string | undefined;
@@ -654,12 +868,20 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
                 tokenMediaItems: {
                     type: string;
                     mime: string;
-                    url: string;
+                    uri: string;
                 }[];
                 tokenUrls: {
                     type: string;
                     url: string;
                 }[];
+            }[];
+            claimPhases: {
+                mintMethod: string;
+                mintArgs: string;
+                mintStartAt: string;
+                mintEndAt: string;
+                mintPriceInWei: string;
+                mintSupply: number;
             }[];
         } | undefined;
         content?: string | undefined;
@@ -681,12 +903,20 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
                 tokenMediaItems: {
                     type: string;
                     mime: string;
-                    url: string;
+                    uri: string;
                 }[];
                 tokenUrls: {
                     type: string;
                     url: string;
                 }[];
+            }[];
+            claimPhases: {
+                mintMethod: string;
+                mintArgs: string;
+                mintStartAt: string;
+                mintEndAt: string;
+                mintPriceInWei: string;
+                mintSupply: number;
             }[];
         } | undefined;
         content?: string | undefined;
@@ -708,12 +938,20 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
                 tokenMediaItems: {
                     type: string;
                     mime: string;
-                    url: string;
+                    uri: string;
                 }[];
                 tokenUrls: {
                     type: string;
                     url: string;
                 }[];
+            }[];
+            claimPhases: {
+                mintMethod: string;
+                mintArgs: string;
+                mintStartAt: string;
+                mintEndAt: string;
+                mintPriceInWei: string;
+                mintSupply: number;
             }[];
         } | undefined;
         content?: string | undefined;

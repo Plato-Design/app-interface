@@ -27,6 +27,15 @@ export declare type TCollectionFields = {
     title: string;
     description: string;
     tokens: TTokenFields[];
+    claimPhases: TClaimPhaseFields[];
+};
+export declare type TClaimPhaseFields = {
+    mintMethod: string;
+    mintArgs: string;
+    mintStartAt: string;
+    mintEndAt: string;
+    mintPriceInWei: string;
+    mintSupply: number;
 };
 export declare type TTokenFields = {
     name: string;
@@ -38,7 +47,7 @@ export declare type TTokenFields = {
 export declare type TTokenMediaItemFields = {
     type: string;
     mime: string;
-    url: string;
+    uri: string;
 };
 export declare type TTokenUrlFields = {
     type: string;

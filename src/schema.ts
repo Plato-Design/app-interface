@@ -12,10 +12,19 @@ export const tRecordDefaultFieldsSchema = z.object({
   updatedAt: z.string(),
 });
 
+export const tClaimPhaseFieldsSchema = z.object({
+  mintMethod: z.string(),
+  mintArgs: z.string(),
+  mintStartAt: z.string(),
+  mintEndAt: z.string(),
+  mintPriceInWei: z.string(),
+  mintSupply: z.number(),
+});
+
 export const tTokenMediaItemFieldsSchema = z.object({
   type: z.string(),
   mime: z.string(),
-  url: z.string(),
+  uri: z.string(),
 });
 
 export const tTokenUrlFieldsSchema = z.object({
@@ -42,6 +51,7 @@ export const tCollectionFieldsSchema = z.object({
   title: z.string(),
   description: z.string(),
   tokens: z.array(tTokenFieldsSchema),
+  claimPhases: z.array(tClaimPhaseFieldsSchema),
 });
 
 export const tCollectionsListResponseDataSchema = z.object({
