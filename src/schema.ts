@@ -22,7 +22,8 @@ export const tClaimPhaseFieldsSchema = z.object({
 });
 
 export const tTokenMediaItemFieldsSchema = z.object({
-  type: z.string(),
+  role: z.string(),
+  origin_field: z.string(),
   mime: z.string(),
   uri: z.string(),
 });

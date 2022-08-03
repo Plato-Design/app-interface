@@ -45,7 +45,8 @@ export declare type TTokenFields = {
     tokenUrls: TTokenUrlFields[];
 };
 export declare type TTokenMediaItemFields = {
-    type: string;
+    role: string;
+    origin_field: string;
     mime: string;
     uri: string;
 };

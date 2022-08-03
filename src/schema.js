@@ -21,7 +21,8 @@ exports.tClaimPhaseFieldsSchema = zod_1.z.object({
     mintSupply: zod_1.z.number()
 });
 exports.tTokenMediaItemFieldsSchema = zod_1.z.object({
-    type: zod_1.z.string(),
+    role: zod_1.z.string(),
+    origin_field: zod_1.z.string(),
     mime: zod_1.z.string(),
     uri: zod_1.z.string()
 });

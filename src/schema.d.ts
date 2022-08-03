@@ -45,15 +45,18 @@ export declare const tClaimPhaseFieldsSchema: z.ZodObject<{
     mintSupply: number;
 }>;
 export declare const tTokenMediaItemFieldsSchema: z.ZodObject<{
-    type: z.ZodString;
+    role: z.ZodString;
+    origin_field: z.ZodString;
     mime: z.ZodString;
     uri: z.ZodString;
 }, "strip", z.ZodTypeAny, {
-    type: string;
+    role: string;
+    origin_field: string;
     mime: string;
     uri: string;
 }, {
-    type: string;
+    role: string;
+    origin_field: string;
     mime: string;
     uri: string;
 }>;
@@ -82,15 +85,18 @@ export declare const tTokenFieldsSchema: z.ZodObject<{
     description: z.ZodOptional<z.ZodString>;
     tokenId: z.ZodString;
     tokenMediaItems: z.ZodArray<z.ZodObject<{
-        type: z.ZodString;
+        role: z.ZodString;
+        origin_field: z.ZodString;
         mime: z.ZodString;
         uri: z.ZodString;
     }, "strip", z.ZodTypeAny, {
-        type: string;
+        role: string;
+        origin_field: string;
         mime: string;
         uri: string;
     }, {
-        type: string;
+        role: string;
+        origin_field: string;
         mime: string;
         uri: string;
     }>, "many">;
@@ -109,7 +115,8 @@ export declare const tTokenFieldsSchema: z.ZodObject<{
     name: string;
     tokenId: string;
     tokenMediaItems: {
-        type: string;
+        role: string;
+        origin_field: string;
         mime: string;
         uri: string;
     }[];
@@ -122,7 +129,8 @@ export declare const tTokenFieldsSchema: z.ZodObject<{
     name: string;
     tokenId: string;
     tokenMediaItems: {
-        type: string;
+        role: string;
+        origin_field: string;
         mime: string;
         uri: string;
     }[];
@@ -142,15 +150,18 @@ export declare const tCollectionFieldsSchema: z.ZodObject<{
         description: z.ZodOptional<z.ZodString>;
         tokenId: z.ZodString;
         tokenMediaItems: z.ZodArray<z.ZodObject<{
-            type: z.ZodString;
+            role: z.ZodString;
+            origin_field: z.ZodString;
             mime: z.ZodString;
             uri: z.ZodString;
         }, "strip", z.ZodTypeAny, {
-            type: string;
+            role: string;
+            origin_field: string;
             mime: string;
             uri: string;
         }, {
-            type: string;
+            role: string;
+            origin_field: string;
             mime: string;
             uri: string;
         }>, "many">;
@@ -169,7 +180,8 @@ export declare const tCollectionFieldsSchema: z.ZodObject<{
         name: string;
         tokenId: string;
         tokenMediaItems: {
-            type: string;
+            role: string;
+            origin_field: string;
             mime: string;
             uri: string;
         }[];
@@ -182,7 +194,8 @@ export declare const tCollectionFieldsSchema: z.ZodObject<{
         name: string;
         tokenId: string;
         tokenMediaItems: {
-            type: string;
+            role: string;
+            origin_field: string;
             mime: string;
             uri: string;
         }[];
@@ -224,7 +237,8 @@ export declare const tCollectionFieldsSchema: z.ZodObject<{
         name: string;
         tokenId: string;
         tokenMediaItems: {
-            type: string;
+            role: string;
+            origin_field: string;
             mime: string;
             uri: string;
         }[];
@@ -252,7 +266,8 @@ export declare const tCollectionFieldsSchema: z.ZodObject<{
         name: string;
         tokenId: string;
         tokenMediaItems: {
-            type: string;
+            role: string;
+            origin_field: string;
             mime: string;
             uri: string;
         }[];
@@ -282,15 +297,18 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
             description: z.ZodOptional<z.ZodString>;
             tokenId: z.ZodString;
             tokenMediaItems: z.ZodArray<z.ZodObject<{
-                type: z.ZodString;
+                role: z.ZodString;
+                origin_field: z.ZodString;
                 mime: z.ZodString;
                 uri: z.ZodString;
             }, "strip", z.ZodTypeAny, {
-                type: string;
+                role: string;
+                origin_field: string;
                 mime: string;
                 uri: string;
             }, {
-                type: string;
+                role: string;
+                origin_field: string;
                 mime: string;
                 uri: string;
             }>, "many">;
@@ -309,7 +327,8 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
             name: string;
             tokenId: string;
             tokenMediaItems: {
-                type: string;
+                role: string;
+                origin_field: string;
                 mime: string;
                 uri: string;
             }[];
@@ -322,7 +341,8 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
             name: string;
             tokenId: string;
             tokenMediaItems: {
-                type: string;
+                role: string;
+                origin_field: string;
                 mime: string;
                 uri: string;
             }[];
@@ -364,7 +384,8 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
             name: string;
             tokenId: string;
             tokenMediaItems: {
-                type: string;
+                role: string;
+                origin_field: string;
                 mime: string;
                 uri: string;
             }[];
@@ -392,7 +413,8 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
             name: string;
             tokenId: string;
             tokenMediaItems: {
-                type: string;
+                role: string;
+                origin_field: string;
                 mime: string;
                 uri: string;
             }[];
@@ -422,7 +444,8 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
             name: string;
             tokenId: string;
             tokenMediaItems: {
-                type: string;
+                role: string;
+                origin_field: string;
                 mime: string;
                 uri: string;
             }[];
@@ -452,7 +475,8 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
             name: string;
             tokenId: string;
             tokenMediaItems: {
-                type: string;
+                role: string;
+                origin_field: string;
                 mime: string;
                 uri: string;
             }[];
@@ -484,15 +508,18 @@ export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
             description: z.ZodOptional<z.ZodString>;
             tokenId: z.ZodString;
             tokenMediaItems: z.ZodArray<z.ZodObject<{
-                type: z.ZodString;
+                role: z.ZodString;
+                origin_field: z.ZodString;
                 mime: z.ZodString;
                 uri: z.ZodString;
             }, "strip", z.ZodTypeAny, {
-                type: string;
+                role: string;
+                origin_field: string;
                 mime: string;
                 uri: string;
             }, {
-                type: string;
+                role: string;
+                origin_field: string;
                 mime: string;
                 uri: string;
             }>, "many">;
@@ -511,7 +538,8 @@ export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
             name: string;
             tokenId: string;
             tokenMediaItems: {
-                type: string;
+                role: string;
+                origin_field: string;
                 mime: string;
                 uri: string;
             }[];
@@ -524,7 +552,8 @@ export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
             name: string;
             tokenId: string;
             tokenMediaItems: {
-                type: string;
+                role: string;
+                origin_field: string;
                 mime: string;
                 uri: string;
             }[];
@@ -566,7 +595,8 @@ export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
             name: string;
             tokenId: string;
             tokenMediaItems: {
-                type: string;
+                role: string;
+                origin_field: string;
                 mime: string;
                 uri: string;
             }[];
@@ -594,7 +624,8 @@ export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
             name: string;
             tokenId: string;
             tokenMediaItems: {
-                type: string;
+                role: string;
+                origin_field: string;
                 mime: string;
                 uri: string;
             }[];
@@ -625,7 +656,8 @@ export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
             name: string;
             tokenId: string;
             tokenMediaItems: {
-                type: string;
+                role: string;
+                origin_field: string;
                 mime: string;
                 uri: string;
             }[];
@@ -657,7 +689,8 @@ export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
             name: string;
             tokenId: string;
             tokenMediaItems: {
-                type: string;
+                role: string;
+                origin_field: string;
                 mime: string;
                 uri: string;
             }[];
@@ -693,15 +726,18 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
                 description: z.ZodOptional<z.ZodString>;
                 tokenId: z.ZodString;
                 tokenMediaItems: z.ZodArray<z.ZodObject<{
-                    type: z.ZodString;
+                    role: z.ZodString;
+                    origin_field: z.ZodString;
                     mime: z.ZodString;
                     uri: z.ZodString;
                 }, "strip", z.ZodTypeAny, {
-                    type: string;
+                    role: string;
+                    origin_field: string;
                     mime: string;
                     uri: string;
                 }, {
-                    type: string;
+                    role: string;
+                    origin_field: string;
                     mime: string;
                     uri: string;
                 }>, "many">;
@@ -720,7 +756,8 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
                 name: string;
                 tokenId: string;
                 tokenMediaItems: {
-                    type: string;
+                    role: string;
+                    origin_field: string;
                     mime: string;
                     uri: string;
                 }[];
@@ -733,7 +770,8 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
                 name: string;
                 tokenId: string;
                 tokenMediaItems: {
-                    type: string;
+                    role: string;
+                    origin_field: string;
                     mime: string;
                     uri: string;
                 }[];
@@ -775,7 +813,8 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
                 name: string;
                 tokenId: string;
                 tokenMediaItems: {
-                    type: string;
+                    role: string;
+                    origin_field: string;
                     mime: string;
                     uri: string;
                 }[];
@@ -803,7 +842,8 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
                 name: string;
                 tokenId: string;
                 tokenMediaItems: {
-                    type: string;
+                    role: string;
+                    origin_field: string;
                     mime: string;
                     uri: string;
                 }[];
@@ -834,7 +874,8 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
                 name: string;
                 tokenId: string;
                 tokenMediaItems: {
-                    type: string;
+                    role: string;
+                    origin_field: string;
                     mime: string;
                     uri: string;
                 }[];
@@ -866,7 +907,8 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
                 name: string;
                 tokenId: string;
                 tokenMediaItems: {
-                    type: string;
+                    role: string;
+                    origin_field: string;
                     mime: string;
                     uri: string;
                 }[];
@@ -901,7 +943,8 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
                 name: string;
                 tokenId: string;
                 tokenMediaItems: {
-                    type: string;
+                    role: string;
+                    origin_field: string;
                     mime: string;
                     uri: string;
                 }[];
@@ -936,7 +979,8 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
                 name: string;
                 tokenId: string;
                 tokenMediaItems: {
-                    type: string;
+                    role: string;
+                    origin_field: string;
                     mime: string;
                     uri: string;
                 }[];
