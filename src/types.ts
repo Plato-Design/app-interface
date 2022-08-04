@@ -58,10 +58,10 @@ export type TTokenFields = {
 };
 
 export type TTokenMediaItemFields = {
-  role: string;
-  origin_field: string;
-  mime: string;
-  uri: string;
+  representation: string;
+  type: string;
+  mimeType: string;
+  url: string;
 };
 
 export type TTokenUrlFields = {

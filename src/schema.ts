@@ -22,10 +22,10 @@ export const tClaimPhaseFieldsSchema = z.object({
 });
 
 export const tTokenMediaItemFieldsSchema = z.object({
-  role: z.string(),
-  origin_field: z.string(),
-  mime: z.string(),
-  uri: z.string(),
+  representation: z.string(),
+  type: z.string(),
+  mimeType: z.string(),
+  url: z.string(),
 });
 
 export const tTokenUrlFieldsSchema = z.object({
