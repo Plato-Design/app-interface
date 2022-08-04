@@ -12,6 +12,14 @@ export const tRecordDefaultFieldsSchema = z.object({
   updatedAt: z.string(),
 });
 
+export const tCollectionFieldsFlatSchema = z.object({
+  networkName: z.string(),
+  contractAddress: z.string(),
+  thumbnailUrl: z.string(),
+  name: z.string(),
+  description: z.string().optional(),
+});
+
 export const tClaimPhaseFieldsSchema = z.object({
   mintMethod: z.string(),
   mintArgs: z.string(),
@@ -19,6 +27,12 @@ export const tClaimPhaseFieldsSchema = z.object({
   mintEndAt: z.string(),
   mintPriceInWei: z.string(),
   mintSupply: z.number(),
+});
+
+export const tTokenFieldsFlatSchema = z.object({
+  name: z.string(),
+  description: z.string().optional(),
+  tokenId: z.string(),
 });
 
 export const tTokenMediaItemFieldsSchema = z.object({
@@ -34,26 +48,24 @@ export const tTokenUrlFieldsSchema = z.object({
 });
 
 export const tCollectionsListQueryDataSchema = tPaginatedEndpointQueryDataSchema.and(
-  z.object({})
+  z.object({
+    maxTokensPerCollection: z.number().optional(),
+  })
 );
 
-export const tTokenFieldsSchema = z.object({
-  name: z.string(),
-  description: z.string().optional(),
-  tokenId: z.string(),
-  tokenMediaItems: z.array(tTokenMediaItemFieldsSchema),
-  tokenUrls: z.array(tTokenUrlFieldsSchema),
-});
+export const tTokenFieldsSchema = tTokenFieldsFlatSchema.and(
+  z.object({
+    tokenMediaItems: z.array(tTokenMediaItemFieldsSchema),
+    tokenUrls: z.array(tTokenUrlFieldsSchema),
+  })
+);
 
-export const tCollectionFieldsSchema = z.object({
-  networkName: z.string(),
-  contractAddress: z.string(),
-  thumbnailUrl: z.string(),
-  name: z.string(),
-  description: z.string().optional(),
-  tokens: z.array(tTokenFieldsSchema),
-  claimPhases: z.array(tClaimPhaseFieldsSchema),
-});
+export const tCollectionFieldsSchema = tCollectionFieldsFlatSchema.and(
+  z.object({
+    tokens: z.array(tTokenFieldsSchema),
+    claimPhases: z.array(tClaimPhaseFieldsSchema),
+  })
+);
 
 export const tCollectionsListResponseDataSchema = z.object({
   collections: z.array(tCollectionFieldsSchema),

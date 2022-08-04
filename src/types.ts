@@ -2,7 +2,9 @@
 https://github.com/fabien0102/ts-to-zod
 */
 
-export type TCollectionsListQueryData = TPaginatedEndpointQueryData & {};
+export type TCollectionsListQueryData = TPaginatedEndpointQueryData & {
+  maxTokensPerCollection?: number;
+};
 
 export type TCollectionsListResponseData = {
   collections: TCollectionFields[];
@@ -30,12 +32,15 @@ export type TCurationSelectionFields = {
   content?: string;
 };
 
-export type TCollectionFields = {
+export type TCollectionFieldsFlat = {
   networkName: string;
   contractAddress: string;
   thumbnailUrl: string;
   name: string;
   description?: string;
+};
+
+export type TCollectionFields = TCollectionFieldsFlat & {
   tokens: TTokenFields[];
   claimPhases: TClaimPhaseFields[];
 };
@@ -49,10 +54,13 @@ export type TClaimPhaseFields = {
   mintSupply: number;
 };
 
-export type TTokenFields = {
+export type TTokenFieldsFlat = {
   name: string;
   description?: string;
   tokenId: string;
+};
+
+export type TTokenFields = TTokenFieldsFlat & {
   tokenMediaItems: TTokenMediaItemFields[];
   tokenUrls: TTokenUrlFields[];
 };
