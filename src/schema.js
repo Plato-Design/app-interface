@@ -42,8 +42,8 @@ exports.tCollectionFieldsSchema = zod_1.z.object({
     networkName: zod_1.z.string(),
     contractAddress: zod_1.z.string(),
     thumbnailUrl: zod_1.z.string(),
-    title: zod_1.z.string(),
-    description: zod_1.z.string(),
+    name: zod_1.z.string(),
+    description: zod_1.z.string().optional(),
     tokens: zod_1.z.array(exports.tTokenFieldsSchema),
     claimPhases: zod_1.z.array(exports.tClaimPhaseFieldsSchema)
 });

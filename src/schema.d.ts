@@ -143,8 +143,8 @@ export declare const tCollectionFieldsSchema: z.ZodObject<{
     networkName: z.ZodString;
     contractAddress: z.ZodString;
     thumbnailUrl: z.ZodString;
-    title: z.ZodString;
-    description: z.ZodString;
+    name: z.ZodString;
+    description: z.ZodOptional<z.ZodString>;
     tokens: z.ZodArray<z.ZodObject<{
         name: z.ZodString;
         description: z.ZodOptional<z.ZodString>;
@@ -227,11 +227,11 @@ export declare const tCollectionFieldsSchema: z.ZodObject<{
         mintSupply: number;
     }>, "many">;
 }, "strip", z.ZodTypeAny, {
-    description: string;
+    description?: string | undefined;
+    name: string;
     networkName: string;
     contractAddress: string;
     thumbnailUrl: string;
-    title: string;
     tokens: {
         description?: string | undefined;
         name: string;
@@ -256,11 +256,11 @@ export declare const tCollectionFieldsSchema: z.ZodObject<{
         mintSupply: number;
     }[];
 }, {
-    description: string;
+    description?: string | undefined;
+    name: string;
     networkName: string;
     contractAddress: string;
     thumbnailUrl: string;
-    title: string;
     tokens: {
         description?: string | undefined;
         name: string;
@@ -290,8 +290,8 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
         networkName: z.ZodString;
         contractAddress: z.ZodString;
         thumbnailUrl: z.ZodString;
-        title: z.ZodString;
-        description: z.ZodString;
+        name: z.ZodString;
+        description: z.ZodOptional<z.ZodString>;
         tokens: z.ZodArray<z.ZodObject<{
             name: z.ZodString;
             description: z.ZodOptional<z.ZodString>;
@@ -374,11 +374,11 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
             mintSupply: number;
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
-        description: string;
+        description?: string | undefined;
+        name: string;
         networkName: string;
         contractAddress: string;
         thumbnailUrl: string;
-        title: string;
         tokens: {
             description?: string | undefined;
             name: string;
@@ -403,11 +403,11 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
             mintSupply: number;
         }[];
     }, {
-        description: string;
+        description?: string | undefined;
+        name: string;
         networkName: string;
         contractAddress: string;
         thumbnailUrl: string;
-        title: string;
         tokens: {
             description?: string | undefined;
             name: string;
@@ -434,11 +434,11 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
     }>, "many">;
 }, "strip", z.ZodTypeAny, {
     collections: {
-        description: string;
+        description?: string | undefined;
+        name: string;
         networkName: string;
         contractAddress: string;
         thumbnailUrl: string;
-        title: string;
         tokens: {
             description?: string | undefined;
             name: string;
@@ -465,11 +465,11 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
     }[];
 }, {
     collections: {
-        description: string;
+        description?: string | undefined;
+        name: string;
         networkName: string;
         contractAddress: string;
         thumbnailUrl: string;
-        title: string;
         tokens: {
             description?: string | undefined;
             name: string;
@@ -501,8 +501,8 @@ export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
         networkName: z.ZodString;
         contractAddress: z.ZodString;
         thumbnailUrl: z.ZodString;
-        title: z.ZodString;
-        description: z.ZodString;
+        name: z.ZodString;
+        description: z.ZodOptional<z.ZodString>;
         tokens: z.ZodArray<z.ZodObject<{
             name: z.ZodString;
             description: z.ZodOptional<z.ZodString>;
@@ -585,11 +585,11 @@ export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
             mintSupply: number;
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
-        description: string;
+        description?: string | undefined;
+        name: string;
         networkName: string;
         contractAddress: string;
         thumbnailUrl: string;
-        title: string;
         tokens: {
             description?: string | undefined;
             name: string;
@@ -614,11 +614,11 @@ export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
             mintSupply: number;
         }[];
     }, {
-        description: string;
+        description?: string | undefined;
+        name: string;
         networkName: string;
         contractAddress: string;
         thumbnailUrl: string;
-        title: string;
         tokens: {
             description?: string | undefined;
             name: string;
@@ -646,11 +646,11 @@ export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
     content: z.ZodOptional<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
     collection?: {
-        description: string;
+        description?: string | undefined;
+        name: string;
         networkName: string;
         contractAddress: string;
         thumbnailUrl: string;
-        title: string;
         tokens: {
             description?: string | undefined;
             name: string;
@@ -679,11 +679,11 @@ export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
     type: string;
 }, {
     collection?: {
-        description: string;
+        description?: string | undefined;
+        name: string;
         networkName: string;
         contractAddress: string;
         thumbnailUrl: string;
-        title: string;
         tokens: {
             description?: string | undefined;
             name: string;
@@ -719,8 +719,8 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
             networkName: z.ZodString;
             contractAddress: z.ZodString;
             thumbnailUrl: z.ZodString;
-            title: z.ZodString;
-            description: z.ZodString;
+            name: z.ZodString;
+            description: z.ZodOptional<z.ZodString>;
             tokens: z.ZodArray<z.ZodObject<{
                 name: z.ZodString;
                 description: z.ZodOptional<z.ZodString>;
@@ -803,11 +803,11 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
                 mintSupply: number;
             }>, "many">;
         }, "strip", z.ZodTypeAny, {
-            description: string;
+            description?: string | undefined;
+            name: string;
             networkName: string;
             contractAddress: string;
             thumbnailUrl: string;
-            title: string;
             tokens: {
                 description?: string | undefined;
                 name: string;
@@ -832,11 +832,11 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
                 mintSupply: number;
             }[];
         }, {
-            description: string;
+            description?: string | undefined;
+            name: string;
             networkName: string;
             contractAddress: string;
             thumbnailUrl: string;
-            title: string;
             tokens: {
                 description?: string | undefined;
                 name: string;
@@ -864,11 +864,11 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
         content: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
         collection?: {
-            description: string;
+            description?: string | undefined;
+            name: string;
             networkName: string;
             contractAddress: string;
             thumbnailUrl: string;
-            title: string;
             tokens: {
                 description?: string | undefined;
                 name: string;
@@ -897,11 +897,11 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
         type: string;
     }, {
         collection?: {
-            description: string;
+            description?: string | undefined;
+            name: string;
             networkName: string;
             contractAddress: string;
             thumbnailUrl: string;
-            title: string;
             tokens: {
                 description?: string | undefined;
                 name: string;
@@ -933,11 +933,11 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
     publishedAt?: string | undefined;
     curationSelections: {
         collection?: {
-            description: string;
+            description?: string | undefined;
+            name: string;
             networkName: string;
             contractAddress: string;
             thumbnailUrl: string;
-            title: string;
             tokens: {
                 description?: string | undefined;
                 name: string;
@@ -969,11 +969,11 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
     publishedAt?: string | undefined;
     curationSelections: {
         collection?: {
-            description: string;
+            description?: string | undefined;
+            name: string;
             networkName: string;
             contractAddress: string;
             thumbnailUrl: string;
-            title: string;
             tokens: {
                 description?: string | undefined;
                 name: string;

@@ -24,8 +24,8 @@ export declare type TCollectionFields = {
     networkName: string;
     contractAddress: string;
     thumbnailUrl: string;
-    title: string;
-    description: string;
+    name: string;
+    description?: string;
     tokens: TTokenFields[];
     claimPhases: TClaimPhaseFields[];
 };

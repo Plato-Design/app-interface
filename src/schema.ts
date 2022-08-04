@@ -49,8 +49,8 @@ export const tCollectionFieldsSchema = z.object({
   networkName: z.string(),
   contractAddress: z.string(),
   thumbnailUrl: z.string(),
-  title: z.string(),
-  description: z.string(),
+  name: z.string(),
+  description: z.string().optional(),
   tokens: z.array(tTokenFieldsSchema),
   claimPhases: z.array(tClaimPhaseFieldsSchema),
 });
