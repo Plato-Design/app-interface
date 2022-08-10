@@ -48,10 +48,7 @@ export type TCollectionFields = TCollectionFieldsFlat & {
 export type TClaimPhaseFields = {
   mintMethod: string;
   mintArgs: string;
-  mintStartAt: string;
-  mintEndAt: string;
   mintPriceInWei: string;
-  mintSupply: number;
 };
 
 export type TTokenFieldsFlat = {

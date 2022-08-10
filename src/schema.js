@@ -22,10 +22,7 @@ exports.tCollectionFieldsFlatSchema = zod_1.z.object({
 exports.tClaimPhaseFieldsSchema = zod_1.z.object({
     mintMethod: zod_1.z.string(),
     mintArgs: zod_1.z.string(),
-    mintStartAt: zod_1.z.string(),
-    mintEndAt: zod_1.z.string(),
-    mintPriceInWei: zod_1.z.string(),
-    mintSupply: zod_1.z.number()
+    mintPriceInWei: zod_1.z.string()
 });
 exports.tTokenFieldsFlatSchema = zod_1.z.object({
     name: zod_1.z.string(),

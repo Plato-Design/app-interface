@@ -23,10 +23,7 @@ export const tCollectionFieldsFlatSchema = z.object({
 export const tClaimPhaseFieldsSchema = z.object({
   mintMethod: z.string(),
   mintArgs: z.string(),
-  mintStartAt: z.string(),
-  mintEndAt: z.string(),
   mintPriceInWei: z.string(),
-  mintSupply: z.number(),
 });
 
 export const tTokenFieldsFlatSchema = z.object({

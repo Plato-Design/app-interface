@@ -44,24 +44,15 @@ export declare const tCollectionFieldsFlatSchema: z.ZodObject<{
 export declare const tClaimPhaseFieldsSchema: z.ZodObject<{
     mintMethod: z.ZodString;
     mintArgs: z.ZodString;
-    mintStartAt: z.ZodString;
-    mintEndAt: z.ZodString;
     mintPriceInWei: z.ZodString;
-    mintSupply: z.ZodNumber;
 }, "strip", z.ZodTypeAny, {
     mintMethod: string;
     mintArgs: string;
-    mintStartAt: string;
-    mintEndAt: string;
     mintPriceInWei: string;
-    mintSupply: number;
 }, {
     mintMethod: string;
     mintArgs: string;
-    mintStartAt: string;
-    mintEndAt: string;
     mintPriceInWei: string;
-    mintSupply: number;
 }>;
 export declare const tTokenFieldsFlatSchema: z.ZodObject<{
     name: z.ZodString;
@@ -264,24 +255,15 @@ export declare const tCollectionFieldsSchema: z.ZodIntersection<z.ZodObject<{
     claimPhases: z.ZodArray<z.ZodObject<{
         mintMethod: z.ZodString;
         mintArgs: z.ZodString;
-        mintStartAt: z.ZodString;
-        mintEndAt: z.ZodString;
         mintPriceInWei: z.ZodString;
-        mintSupply: z.ZodNumber;
     }, "strip", z.ZodTypeAny, {
         mintMethod: string;
         mintArgs: string;
-        mintStartAt: string;
-        mintEndAt: string;
         mintPriceInWei: string;
-        mintSupply: number;
     }, {
         mintMethod: string;
         mintArgs: string;
-        mintStartAt: string;
-        mintEndAt: string;
         mintPriceInWei: string;
-        mintSupply: number;
     }>, "many">;
 }, "strip", z.ZodTypeAny, {
     tokens: ({
@@ -303,10 +285,7 @@ export declare const tCollectionFieldsSchema: z.ZodIntersection<z.ZodObject<{
     claimPhases: {
         mintMethod: string;
         mintArgs: string;
-        mintStartAt: string;
-        mintEndAt: string;
         mintPriceInWei: string;
-        mintSupply: number;
     }[];
 }, {
     tokens: ({
@@ -328,10 +307,7 @@ export declare const tCollectionFieldsSchema: z.ZodIntersection<z.ZodObject<{
     claimPhases: {
         mintMethod: string;
         mintArgs: string;
-        mintStartAt: string;
-        mintEndAt: string;
         mintPriceInWei: string;
-        mintSupply: number;
     }[];
 }>>;
 export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
@@ -419,24 +395,15 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
         claimPhases: z.ZodArray<z.ZodObject<{
             mintMethod: z.ZodString;
             mintArgs: z.ZodString;
-            mintStartAt: z.ZodString;
-            mintEndAt: z.ZodString;
             mintPriceInWei: z.ZodString;
-            mintSupply: z.ZodNumber;
         }, "strip", z.ZodTypeAny, {
             mintMethod: string;
             mintArgs: string;
-            mintStartAt: string;
-            mintEndAt: string;
             mintPriceInWei: string;
-            mintSupply: number;
         }, {
             mintMethod: string;
             mintArgs: string;
-            mintStartAt: string;
-            mintEndAt: string;
             mintPriceInWei: string;
-            mintSupply: number;
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         tokens: ({
@@ -458,10 +425,7 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
         claimPhases: {
             mintMethod: string;
             mintArgs: string;
-            mintStartAt: string;
-            mintEndAt: string;
             mintPriceInWei: string;
-            mintSupply: number;
         }[];
     }, {
         tokens: ({
@@ -483,10 +447,7 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
         claimPhases: {
             mintMethod: string;
             mintArgs: string;
-            mintStartAt: string;
-            mintEndAt: string;
             mintPriceInWei: string;
-            mintSupply: number;
         }[];
     }>>, "many">;
 }, "strip", z.ZodTypeAny, {
@@ -516,10 +477,7 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
         claimPhases: {
             mintMethod: string;
             mintArgs: string;
-            mintStartAt: string;
-            mintEndAt: string;
             mintPriceInWei: string;
-            mintSupply: number;
         }[];
     })[];
 }, {
@@ -549,10 +507,7 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
         claimPhases: {
             mintMethod: string;
             mintArgs: string;
-            mintStartAt: string;
-            mintEndAt: string;
             mintPriceInWei: string;
-            mintSupply: number;
         }[];
     })[];
 }>;
@@ -642,24 +597,15 @@ export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
         claimPhases: z.ZodArray<z.ZodObject<{
             mintMethod: z.ZodString;
             mintArgs: z.ZodString;
-            mintStartAt: z.ZodString;
-            mintEndAt: z.ZodString;
             mintPriceInWei: z.ZodString;
-            mintSupply: z.ZodNumber;
         }, "strip", z.ZodTypeAny, {
             mintMethod: string;
             mintArgs: string;
-            mintStartAt: string;
-            mintEndAt: string;
             mintPriceInWei: string;
-            mintSupply: number;
         }, {
             mintMethod: string;
             mintArgs: string;
-            mintStartAt: string;
-            mintEndAt: string;
             mintPriceInWei: string;
-            mintSupply: number;
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         tokens: ({
@@ -681,10 +627,7 @@ export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
         claimPhases: {
             mintMethod: string;
             mintArgs: string;
-            mintStartAt: string;
-            mintEndAt: string;
             mintPriceInWei: string;
-            mintSupply: number;
         }[];
     }, {
         tokens: ({
@@ -706,10 +649,7 @@ export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
         claimPhases: {
             mintMethod: string;
             mintArgs: string;
-            mintStartAt: string;
-            mintEndAt: string;
             mintPriceInWei: string;
-            mintSupply: number;
         }[];
     }>>>;
     content: z.ZodOptional<z.ZodString>;
@@ -740,10 +680,7 @@ export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
         claimPhases: {
             mintMethod: string;
             mintArgs: string;
-            mintStartAt: string;
-            mintEndAt: string;
             mintPriceInWei: string;
-            mintSupply: number;
         }[];
     }) | undefined;
     content?: string | undefined;
@@ -775,10 +712,7 @@ export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
         claimPhases: {
             mintMethod: string;
             mintArgs: string;
-            mintStartAt: string;
-            mintEndAt: string;
             mintPriceInWei: string;
-            mintSupply: number;
         }[];
     }) | undefined;
     content?: string | undefined;
@@ -872,24 +806,15 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
             claimPhases: z.ZodArray<z.ZodObject<{
                 mintMethod: z.ZodString;
                 mintArgs: z.ZodString;
-                mintStartAt: z.ZodString;
-                mintEndAt: z.ZodString;
                 mintPriceInWei: z.ZodString;
-                mintSupply: z.ZodNumber;
             }, "strip", z.ZodTypeAny, {
                 mintMethod: string;
                 mintArgs: string;
-                mintStartAt: string;
-                mintEndAt: string;
                 mintPriceInWei: string;
-                mintSupply: number;
             }, {
                 mintMethod: string;
                 mintArgs: string;
-                mintStartAt: string;
-                mintEndAt: string;
                 mintPriceInWei: string;
-                mintSupply: number;
             }>, "many">;
         }, "strip", z.ZodTypeAny, {
             tokens: ({
@@ -911,10 +836,7 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
             claimPhases: {
                 mintMethod: string;
                 mintArgs: string;
-                mintStartAt: string;
-                mintEndAt: string;
                 mintPriceInWei: string;
-                mintSupply: number;
             }[];
         }, {
             tokens: ({
@@ -936,10 +858,7 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
             claimPhases: {
                 mintMethod: string;
                 mintArgs: string;
-                mintStartAt: string;
-                mintEndAt: string;
                 mintPriceInWei: string;
-                mintSupply: number;
             }[];
         }>>>;
         content: z.ZodOptional<z.ZodString>;
@@ -970,10 +889,7 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
             claimPhases: {
                 mintMethod: string;
                 mintArgs: string;
-                mintStartAt: string;
-                mintEndAt: string;
                 mintPriceInWei: string;
-                mintSupply: number;
             }[];
         }) | undefined;
         content?: string | undefined;
@@ -1005,10 +921,7 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
             claimPhases: {
                 mintMethod: string;
                 mintArgs: string;
-                mintStartAt: string;
-                mintEndAt: string;
                 mintPriceInWei: string;
-                mintSupply: number;
             }[];
         }) | undefined;
         content?: string | undefined;
@@ -1043,10 +956,7 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
             claimPhases: {
                 mintMethod: string;
                 mintArgs: string;
-                mintStartAt: string;
-                mintEndAt: string;
                 mintPriceInWei: string;
-                mintSupply: number;
             }[];
         }) | undefined;
         content?: string | undefined;
@@ -1081,10 +991,7 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
             claimPhases: {
                 mintMethod: string;
                 mintArgs: string;
-                mintStartAt: string;
-                mintEndAt: string;
                 mintPriceInWei: string;
-                mintSupply: number;
             }[];
         }) | undefined;
         content?: string | undefined;
