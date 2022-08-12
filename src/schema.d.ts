@@ -194,21 +194,21 @@ export declare const tTokenFieldsSchema: z.ZodIntersection<z.ZodObject<{
 export declare const tMintOptionSchema: z.ZodObject<{
     networkName: z.ZodString;
     contractAddress: z.ZodString;
-    mintQuantity: z.ZodNumber;
+    mintQuantity: z.ZodString;
     mintPriceInWei: z.ZodString;
     mintMethod: z.ZodString;
     mintArgs: z.ZodArray<z.ZodNullable<z.ZodUnion<[z.ZodString, z.ZodNumber]>>, "many">;
 }, "strip", z.ZodTypeAny, {
     networkName: string;
     contractAddress: string;
-    mintQuantity: number;
+    mintQuantity: string;
     mintPriceInWei: string;
     mintMethod: string;
     mintArgs: (string | number | null)[];
 }, {
     networkName: string;
     contractAddress: string;
-    mintQuantity: number;
+    mintQuantity: string;
     mintPriceInWei: string;
     mintMethod: string;
     mintArgs: (string | number | null)[];
@@ -216,21 +216,21 @@ export declare const tMintOptionSchema: z.ZodObject<{
 export declare const tCallableMintOptionSchema: z.ZodIntersection<z.ZodObject<{
     networkName: z.ZodString;
     contractAddress: z.ZodString;
-    mintQuantity: z.ZodNumber;
+    mintQuantity: z.ZodString;
     mintPriceInWei: z.ZodString;
     mintMethod: z.ZodString;
     mintArgs: z.ZodArray<z.ZodNullable<z.ZodUnion<[z.ZodString, z.ZodNumber]>>, "many">;
 }, "strip", z.ZodTypeAny, {
     networkName: string;
     contractAddress: string;
-    mintQuantity: number;
+    mintQuantity: string;
     mintPriceInWei: string;
     mintMethod: string;
     mintArgs: (string | number | null)[];
 }, {
     networkName: string;
     contractAddress: string;
-    mintQuantity: number;
+    mintQuantity: string;
     mintPriceInWei: string;
     mintMethod: string;
     mintArgs: (string | number | null)[];
@@ -329,21 +329,21 @@ export declare const tCollectionFieldsSimplifiedSchema: z.ZodIntersection<z.ZodO
     mintOptions: z.ZodArray<z.ZodObject<{
         networkName: z.ZodString;
         contractAddress: z.ZodString;
-        mintQuantity: z.ZodNumber;
+        mintQuantity: z.ZodString;
         mintPriceInWei: z.ZodString;
         mintMethod: z.ZodString;
         mintArgs: z.ZodArray<z.ZodNullable<z.ZodUnion<[z.ZodString, z.ZodNumber]>>, "many">;
     }, "strip", z.ZodTypeAny, {
         networkName: string;
         contractAddress: string;
-        mintQuantity: number;
+        mintQuantity: string;
         mintPriceInWei: string;
         mintMethod: string;
         mintArgs: (string | number | null)[];
     }, {
         networkName: string;
         contractAddress: string;
-        mintQuantity: number;
+        mintQuantity: string;
         mintPriceInWei: string;
         mintMethod: string;
         mintArgs: (string | number | null)[];
@@ -359,7 +359,7 @@ export declare const tCollectionFieldsSimplifiedSchema: z.ZodIntersection<z.ZodO
     mintOptions: {
         networkName: string;
         contractAddress: string;
-        mintQuantity: number;
+        mintQuantity: string;
         mintPriceInWei: string;
         mintMethod: string;
         mintArgs: (string | number | null)[];
@@ -375,7 +375,7 @@ export declare const tCollectionFieldsSimplifiedSchema: z.ZodIntersection<z.ZodO
     mintOptions: {
         networkName: string;
         contractAddress: string;
-        mintQuantity: number;
+        mintQuantity: string;
         mintPriceInWei: string;
         mintMethod: string;
         mintArgs: (string | number | null)[];
@@ -510,21 +510,21 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
         mintOptions: z.ZodArray<z.ZodObject<{
             networkName: z.ZodString;
             contractAddress: z.ZodString;
-            mintQuantity: z.ZodNumber;
+            mintQuantity: z.ZodString;
             mintPriceInWei: z.ZodString;
             mintMethod: z.ZodString;
             mintArgs: z.ZodArray<z.ZodNullable<z.ZodUnion<[z.ZodString, z.ZodNumber]>>, "many">;
         }, "strip", z.ZodTypeAny, {
             networkName: string;
             contractAddress: string;
-            mintQuantity: number;
+            mintQuantity: string;
             mintPriceInWei: string;
             mintMethod: string;
             mintArgs: (string | number | null)[];
         }, {
             networkName: string;
             contractAddress: string;
-            mintQuantity: number;
+            mintQuantity: string;
             mintPriceInWei: string;
             mintMethod: string;
             mintArgs: (string | number | null)[];
@@ -540,7 +540,7 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
         mintOptions: {
             networkName: string;
             contractAddress: string;
-            mintQuantity: number;
+            mintQuantity: string;
             mintPriceInWei: string;
             mintMethod: string;
             mintArgs: (string | number | null)[];
@@ -556,7 +556,7 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
         mintOptions: {
             networkName: string;
             contractAddress: string;
-            mintQuantity: number;
+            mintQuantity: string;
             mintPriceInWei: string;
             mintMethod: string;
             mintArgs: (string | number | null)[];
@@ -580,7 +580,7 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
         mintOptions: {
             networkName: string;
             contractAddress: string;
-            mintQuantity: number;
+            mintQuantity: string;
             mintPriceInWei: string;
             mintMethod: string;
             mintArgs: (string | number | null)[];
@@ -604,7 +604,7 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
         mintOptions: {
             networkName: string;
             contractAddress: string;
-            mintQuantity: number;
+            mintQuantity: string;
             mintPriceInWei: string;
             mintMethod: string;
             mintArgs: (string | number | null)[];

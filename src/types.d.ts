@@ -70,7 +70,7 @@ export declare type TTokenUrlFields = {
 export declare type TMintOption = {
     networkName: string;
     contractAddress: string;
-    mintQuantity: number;
+    mintQuantity: string;
     mintPriceInWei: string;
     mintMethod: string;
     mintArgs: TMintOptionMintArg[];

@@ -66,7 +66,7 @@ exports.tTokenFieldsSchema = exports.tTokenFieldsFlatSchema.and(zod_1.z.object({
 exports.tMintOptionSchema = zod_1.z.object({
     networkName: zod_1.z.string(),
     contractAddress: zod_1.z.string(),
-    mintQuantity: zod_1.z.number(),
+    mintQuantity: zod_1.z.string(),
     mintPriceInWei: zod_1.z.string(),
     mintMethod: zod_1.z.string(),
     mintArgs: zod_1.z.array(exports.tMintOptionMintArgSchema)

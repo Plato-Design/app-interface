@@ -79,7 +79,7 @@ export const tTokenFieldsSchema = tTokenFieldsFlatSchema.and(
 export const tMintOptionSchema = z.object({
   networkName: z.string(),
   contractAddress: z.string(),
-  mintQuantity: z.number(),
+  mintQuantity: z.string(),
   mintPriceInWei: z.string(),
   mintMethod: z.string(),
   mintArgs: z.array(tMintOptionMintArgSchema),

@@ -95,7 +95,7 @@ export type TTokenUrlFields = {
 export type TMintOption = {
   networkName: string;
   contractAddress: string;
-  mintQuantity: number;
+  mintQuantity: string;
   mintPriceInWei: string;
   mintMethod: string;
   mintArgs: TMintOptionMintArg[];
@@ -130,10 +130,10 @@ export type TMintArgBignumValue = {
 };
 
 export type TABIElement = {
-  name?: string
-  type: "error" | "event" | "function" | "constructor"
-  anonymous?: boolean
-  stateMutability?: "view" | "nonpayable" | "payable"
-  inputs: any[]
-  outputs: any[]
-}
+  name?: string;
+  type: "error" | "event" | "function" | "constructor";
+  anonymous?: boolean;
+  stateMutability?: "view" | "nonpayable" | "payable";
+  inputs: any[];
+  outputs: any[];
+};
