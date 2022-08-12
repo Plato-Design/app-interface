@@ -2,10 +2,12 @@ export declare type TCollectionsListQueryData = TPaginatedEndpointQueryData & {
     maxTokensPerCollection?: number;
 };
 export declare type TCollectionsListResponseData = {
-    collections: (TCollectionFields & {
-        id: string;
-        mintOptions: TMintOption[];
-    })[];
+    collections: TCollectionFieldsSimplified[];
+};
+export declare type TCollectionFieldsSimplified = TCollectionFieldsFlat & {
+    id: string;
+    tokenMediaItems: TTokenMediaItemFields[];
+    mintOptions: TMintOption[];
 };
 export declare type TPaginatedEndpointQueryData = {
     skip: number;

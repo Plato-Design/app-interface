@@ -95,3 +95,15 @@ export const tRawMintArgSchema = z
       }),
     ])
   );
+
+export const tCollectionFieldsSimplifiedSchema = tCollectionFieldsFlatSchema.and(
+  z.object({
+    id: z.string(),
+    tokenMediaItems: z.array(tTokenMediaItemFieldsSchema),
+    mintOptions: z.array(tMintOptionSchema),
+  })
+);
+
+export const tCollectionsListResponseDataSchema = z.object({
+  collections: z.array(tCollectionFieldsSimplifiedSchema),
+});

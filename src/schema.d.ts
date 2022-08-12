@@ -268,3 +268,235 @@ export declare const tRawMintArgSchema: z.ZodIntersection<z.ZodObject<{
     type: "bytes32[]";
     value: string[];
 }>]>>;
+export declare const tCollectionFieldsSimplifiedSchema: z.ZodIntersection<z.ZodObject<{
+    networkName: z.ZodString;
+    contractAddress: z.ZodString;
+    thumbnailUrl: z.ZodString;
+    name: z.ZodString;
+    description: z.ZodOptional<z.ZodString>;
+}, "strip", z.ZodTypeAny, {
+    description?: string | undefined;
+    networkName: string;
+    contractAddress: string;
+    thumbnailUrl: string;
+    name: string;
+}, {
+    description?: string | undefined;
+    networkName: string;
+    contractAddress: string;
+    thumbnailUrl: string;
+    name: string;
+}>, z.ZodObject<{
+    id: z.ZodString;
+    tokenMediaItems: z.ZodArray<z.ZodObject<{
+        representation: z.ZodString;
+        type: z.ZodString;
+        mimeType: z.ZodString;
+        url: z.ZodString;
+    }, "strip", z.ZodTypeAny, {
+        type: string;
+        representation: string;
+        mimeType: string;
+        url: string;
+    }, {
+        type: string;
+        representation: string;
+        mimeType: string;
+        url: string;
+    }>, "many">;
+    mintOptions: z.ZodArray<z.ZodObject<{
+        networkName: z.ZodString;
+        contractAddress: z.ZodString;
+        mintQuantity: z.ZodNumber;
+        mintPriceInWei: z.ZodString;
+        mintMethod: z.ZodString;
+        mintArgs: z.ZodArray<z.ZodNullable<z.ZodUnion<[z.ZodString, z.ZodNumber]>>, "many">;
+    }, "strip", z.ZodTypeAny, {
+        networkName: string;
+        contractAddress: string;
+        mintQuantity: number;
+        mintPriceInWei: string;
+        mintMethod: string;
+        mintArgs: (string | number | null)[];
+    }, {
+        networkName: string;
+        contractAddress: string;
+        mintQuantity: number;
+        mintPriceInWei: string;
+        mintMethod: string;
+        mintArgs: (string | number | null)[];
+    }>, "many">;
+}, "strip", z.ZodTypeAny, {
+    id: string;
+    tokenMediaItems: {
+        type: string;
+        representation: string;
+        mimeType: string;
+        url: string;
+    }[];
+    mintOptions: {
+        networkName: string;
+        contractAddress: string;
+        mintQuantity: number;
+        mintPriceInWei: string;
+        mintMethod: string;
+        mintArgs: (string | number | null)[];
+    }[];
+}, {
+    id: string;
+    tokenMediaItems: {
+        type: string;
+        representation: string;
+        mimeType: string;
+        url: string;
+    }[];
+    mintOptions: {
+        networkName: string;
+        contractAddress: string;
+        mintQuantity: number;
+        mintPriceInWei: string;
+        mintMethod: string;
+        mintArgs: (string | number | null)[];
+    }[];
+}>>;
+export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
+    collections: z.ZodArray<z.ZodIntersection<z.ZodObject<{
+        networkName: z.ZodString;
+        contractAddress: z.ZodString;
+        thumbnailUrl: z.ZodString;
+        name: z.ZodString;
+        description: z.ZodOptional<z.ZodString>;
+    }, "strip", z.ZodTypeAny, {
+        description?: string | undefined;
+        networkName: string;
+        contractAddress: string;
+        thumbnailUrl: string;
+        name: string;
+    }, {
+        description?: string | undefined;
+        networkName: string;
+        contractAddress: string;
+        thumbnailUrl: string;
+        name: string;
+    }>, z.ZodObject<{
+        id: z.ZodString;
+        tokenMediaItems: z.ZodArray<z.ZodObject<{
+            representation: z.ZodString;
+            type: z.ZodString;
+            mimeType: z.ZodString;
+            url: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            type: string;
+            representation: string;
+            mimeType: string;
+            url: string;
+        }, {
+            type: string;
+            representation: string;
+            mimeType: string;
+            url: string;
+        }>, "many">;
+        mintOptions: z.ZodArray<z.ZodObject<{
+            networkName: z.ZodString;
+            contractAddress: z.ZodString;
+            mintQuantity: z.ZodNumber;
+            mintPriceInWei: z.ZodString;
+            mintMethod: z.ZodString;
+            mintArgs: z.ZodArray<z.ZodNullable<z.ZodUnion<[z.ZodString, z.ZodNumber]>>, "many">;
+        }, "strip", z.ZodTypeAny, {
+            networkName: string;
+            contractAddress: string;
+            mintQuantity: number;
+            mintPriceInWei: string;
+            mintMethod: string;
+            mintArgs: (string | number | null)[];
+        }, {
+            networkName: string;
+            contractAddress: string;
+            mintQuantity: number;
+            mintPriceInWei: string;
+            mintMethod: string;
+            mintArgs: (string | number | null)[];
+        }>, "many">;
+    }, "strip", z.ZodTypeAny, {
+        id: string;
+        tokenMediaItems: {
+            type: string;
+            representation: string;
+            mimeType: string;
+            url: string;
+        }[];
+        mintOptions: {
+            networkName: string;
+            contractAddress: string;
+            mintQuantity: number;
+            mintPriceInWei: string;
+            mintMethod: string;
+            mintArgs: (string | number | null)[];
+        }[];
+    }, {
+        id: string;
+        tokenMediaItems: {
+            type: string;
+            representation: string;
+            mimeType: string;
+            url: string;
+        }[];
+        mintOptions: {
+            networkName: string;
+            contractAddress: string;
+            mintQuantity: number;
+            mintPriceInWei: string;
+            mintMethod: string;
+            mintArgs: (string | number | null)[];
+        }[];
+    }>>, "many">;
+}, "strip", z.ZodTypeAny, {
+    collections: ({
+        description?: string | undefined;
+        networkName: string;
+        contractAddress: string;
+        thumbnailUrl: string;
+        name: string;
+    } & {
+        id: string;
+        tokenMediaItems: {
+            type: string;
+            representation: string;
+            mimeType: string;
+            url: string;
+        }[];
+        mintOptions: {
+            networkName: string;
+            contractAddress: string;
+            mintQuantity: number;
+            mintPriceInWei: string;
+            mintMethod: string;
+            mintArgs: (string | number | null)[];
+        }[];
+    })[];
+}, {
+    collections: ({
+        description?: string | undefined;
+        networkName: string;
+        contractAddress: string;
+        thumbnailUrl: string;
+        name: string;
+    } & {
+        id: string;
+        tokenMediaItems: {
+            type: string;
+            representation: string;
+            mimeType: string;
+            url: string;
+        }[];
+        mintOptions: {
+            networkName: string;
+            contractAddress: string;
+            mintQuantity: number;
+            mintPriceInWei: string;
+            mintMethod: string;
+            mintArgs: (string | number | null)[];
+        }[];
+    })[];
+}>;

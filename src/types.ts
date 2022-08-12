@@ -7,10 +7,13 @@ export type TCollectionsListQueryData = TPaginatedEndpointQueryData & {
 };
 
 export type TCollectionsListResponseData = {
-  collections: (TCollectionFields & {
-    id: string;
-    mintOptions: TMintOption[];
-  })[];
+  collections: TCollectionFieldsSimplified[];
+};
+
+export type TCollectionFieldsSimplified = TCollectionFieldsFlat & {
+  id: string;
+  tokenMediaItems: TTokenMediaItemFields[];
+  mintOptions: TMintOption[];
 };
 
 export type TPaginatedEndpointQueryData = {
