@@ -53,7 +53,7 @@ export type TCollectionFields = TCollectionFieldsFlat & {
 
 export type TClaimPhaseFields = {
   mintMethod: string;
-  mintArgs: JsonValue;
+  mintArgs: TRawMintArg[];
   mintPriceInWei: string;
 };
 
@@ -64,7 +64,9 @@ export type JsonValue =
   | null
   | JsonObject
   | JsonArray;
+
 export type JsonArray = JsonValue[];
+
 export type JsonObject = { [key: string]: JsonValue };
 
 export type TTokenFieldsFlat = {

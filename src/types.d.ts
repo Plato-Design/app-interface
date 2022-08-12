@@ -40,7 +40,7 @@ export declare type TCollectionFields = TCollectionFieldsFlat & {
 };
 export declare type TClaimPhaseFields = {
     mintMethod: string;
-    mintArgs: JsonValue;
+    mintArgs: TRawMintArg[];
     mintPriceInWei: string;
 };
 export declare type JsonValue = string | number | boolean | null | JsonObject | JsonArray;

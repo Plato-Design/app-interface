@@ -104,6 +104,30 @@ export const tCollectionFieldsSimplifiedSchema = tCollectionFieldsFlatSchema.and
   })
 );
 
+export const tClaimPhaseFieldsSchema = z.object({
+  mintMethod: z.string(),
+  mintArgs: z.array(tRawMintArgSchema),
+  mintPriceInWei: z.string(),
+});
+
 export const tCollectionsListResponseDataSchema = z.object({
   collections: z.array(tCollectionFieldsSimplifiedSchema),
+});
+
+export const tCollectionFieldsSchema = tCollectionFieldsFlatSchema.and(
+  z.object({
+    tokens: z.array(tTokenFieldsSchema),
+    claimPhases: z.array(tClaimPhaseFieldsSchema),
+  })
+);
+
+export const tCurationSelectionFieldsSchema = z.object({
+  type: z.string(),
+  collection: tCollectionFieldsSchema.optional(),
+  content: z.string().optional(),
+});
+
+export const tCurationFieldsSchema = z.object({
+  publishedAt: z.string().optional(),
+  curationSelections: z.array(tCurationSelectionFieldsSchema),
 });

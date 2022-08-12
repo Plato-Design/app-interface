@@ -359,6 +359,95 @@ export declare const tCollectionFieldsSimplifiedSchema: z.ZodIntersection<z.ZodO
         mintArgs: (string | number | null)[];
     }[];
 }>>;
+export declare const tClaimPhaseFieldsSchema: z.ZodObject<{
+    mintMethod: z.ZodString;
+    mintArgs: z.ZodArray<z.ZodIntersection<z.ZodObject<{
+        name: z.ZodString;
+    }, "strip", z.ZodTypeAny, {
+        name: string;
+    }, {
+        name: string;
+    }>, z.ZodUnion<[z.ZodObject<{
+        type: z.ZodLiteral<"address">;
+        value: z.ZodLiteral<"string">;
+    }, "strip", z.ZodTypeAny, {
+        type: "address";
+        value: "string";
+    }, {
+        type: "address";
+        value: "string";
+    }>, z.ZodObject<{
+        type: z.ZodLiteral<"uint256">;
+        value: z.ZodObject<{
+            type: z.ZodLiteral<"BigNumber">;
+            hex: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            type: "BigNumber";
+            hex: string;
+        }, {
+            type: "BigNumber";
+            hex: string;
+        }>;
+    }, "strip", z.ZodTypeAny, {
+        type: "uint256";
+        value: {
+            type: "BigNumber";
+            hex: string;
+        };
+    }, {
+        type: "uint256";
+        value: {
+            type: "BigNumber";
+            hex: string;
+        };
+    }>, z.ZodObject<{
+        type: z.ZodLiteral<"bytes32[]">;
+        value: z.ZodArray<z.ZodString, "many">;
+    }, "strip", z.ZodTypeAny, {
+        type: "bytes32[]";
+        value: string[];
+    }, {
+        type: "bytes32[]";
+        value: string[];
+    }>]>>, "many">;
+    mintPriceInWei: z.ZodString;
+}, "strip", z.ZodTypeAny, {
+    mintPriceInWei: string;
+    mintMethod: string;
+    mintArgs: ({
+        name: string;
+    } & ({
+        type: "address";
+        value: "string";
+    } | {
+        type: "uint256";
+        value: {
+            type: "BigNumber";
+            hex: string;
+        };
+    } | {
+        type: "bytes32[]";
+        value: string[];
+    }))[];
+}, {
+    mintPriceInWei: string;
+    mintMethod: string;
+    mintArgs: ({
+        name: string;
+    } & ({
+        type: "address";
+        value: "string";
+    } | {
+        type: "uint256";
+        value: {
+            type: "BigNumber";
+            hex: string;
+        };
+    } | {
+        type: "bytes32[]";
+        value: string[];
+    }))[];
+}>;
 export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
     collections: z.ZodArray<z.ZodIntersection<z.ZodObject<{
         networkName: z.ZodString;
@@ -499,4 +588,1026 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
             mintArgs: (string | number | null)[];
         }[];
     })[];
+}>;
+export declare const tCollectionFieldsSchema: z.ZodIntersection<z.ZodObject<{
+    networkName: z.ZodString;
+    contractAddress: z.ZodString;
+    thumbnailUrl: z.ZodString;
+    name: z.ZodString;
+    description: z.ZodOptional<z.ZodString>;
+}, "strip", z.ZodTypeAny, {
+    description?: string | undefined;
+    networkName: string;
+    contractAddress: string;
+    thumbnailUrl: string;
+    name: string;
+}, {
+    description?: string | undefined;
+    networkName: string;
+    contractAddress: string;
+    thumbnailUrl: string;
+    name: string;
+}>, z.ZodObject<{
+    tokens: z.ZodArray<z.ZodIntersection<z.ZodObject<{
+        name: z.ZodString;
+        description: z.ZodOptional<z.ZodString>;
+        tokenId: z.ZodString;
+    }, "strip", z.ZodTypeAny, {
+        description?: string | undefined;
+        name: string;
+        tokenId: string;
+    }, {
+        description?: string | undefined;
+        name: string;
+        tokenId: string;
+    }>, z.ZodObject<{
+        tokenMediaItems: z.ZodArray<z.ZodObject<{
+            representation: z.ZodString;
+            type: z.ZodString;
+            mimeType: z.ZodString;
+            url: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            type: string;
+            representation: string;
+            mimeType: string;
+            url: string;
+        }, {
+            type: string;
+            representation: string;
+            mimeType: string;
+            url: string;
+        }>, "many">;
+        tokenUrls: z.ZodArray<z.ZodObject<{
+            type: z.ZodString;
+            url: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            type: string;
+            url: string;
+        }, {
+            type: string;
+            url: string;
+        }>, "many">;
+    }, "strip", z.ZodTypeAny, {
+        tokenMediaItems: {
+            type: string;
+            representation: string;
+            mimeType: string;
+            url: string;
+        }[];
+        tokenUrls: {
+            type: string;
+            url: string;
+        }[];
+    }, {
+        tokenMediaItems: {
+            type: string;
+            representation: string;
+            mimeType: string;
+            url: string;
+        }[];
+        tokenUrls: {
+            type: string;
+            url: string;
+        }[];
+    }>>, "many">;
+    claimPhases: z.ZodArray<z.ZodObject<{
+        mintMethod: z.ZodString;
+        mintArgs: z.ZodArray<z.ZodIntersection<z.ZodObject<{
+            name: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            name: string;
+        }, {
+            name: string;
+        }>, z.ZodUnion<[z.ZodObject<{
+            type: z.ZodLiteral<"address">;
+            value: z.ZodLiteral<"string">;
+        }, "strip", z.ZodTypeAny, {
+            type: "address";
+            value: "string";
+        }, {
+            type: "address";
+            value: "string";
+        }>, z.ZodObject<{
+            type: z.ZodLiteral<"uint256">;
+            value: z.ZodObject<{
+                type: z.ZodLiteral<"BigNumber">;
+                hex: z.ZodString;
+            }, "strip", z.ZodTypeAny, {
+                type: "BigNumber";
+                hex: string;
+            }, {
+                type: "BigNumber";
+                hex: string;
+            }>;
+        }, "strip", z.ZodTypeAny, {
+            type: "uint256";
+            value: {
+                type: "BigNumber";
+                hex: string;
+            };
+        }, {
+            type: "uint256";
+            value: {
+                type: "BigNumber";
+                hex: string;
+            };
+        }>, z.ZodObject<{
+            type: z.ZodLiteral<"bytes32[]">;
+            value: z.ZodArray<z.ZodString, "many">;
+        }, "strip", z.ZodTypeAny, {
+            type: "bytes32[]";
+            value: string[];
+        }, {
+            type: "bytes32[]";
+            value: string[];
+        }>]>>, "many">;
+        mintPriceInWei: z.ZodString;
+    }, "strip", z.ZodTypeAny, {
+        mintPriceInWei: string;
+        mintMethod: string;
+        mintArgs: ({
+            name: string;
+        } & ({
+            type: "address";
+            value: "string";
+        } | {
+            type: "uint256";
+            value: {
+                type: "BigNumber";
+                hex: string;
+            };
+        } | {
+            type: "bytes32[]";
+            value: string[];
+        }))[];
+    }, {
+        mintPriceInWei: string;
+        mintMethod: string;
+        mintArgs: ({
+            name: string;
+        } & ({
+            type: "address";
+            value: "string";
+        } | {
+            type: "uint256";
+            value: {
+                type: "BigNumber";
+                hex: string;
+            };
+        } | {
+            type: "bytes32[]";
+            value: string[];
+        }))[];
+    }>, "many">;
+}, "strip", z.ZodTypeAny, {
+    tokens: ({
+        description?: string | undefined;
+        name: string;
+        tokenId: string;
+    } & {
+        tokenMediaItems: {
+            type: string;
+            representation: string;
+            mimeType: string;
+            url: string;
+        }[];
+        tokenUrls: {
+            type: string;
+            url: string;
+        }[];
+    })[];
+    claimPhases: {
+        mintPriceInWei: string;
+        mintMethod: string;
+        mintArgs: ({
+            name: string;
+        } & ({
+            type: "address";
+            value: "string";
+        } | {
+            type: "uint256";
+            value: {
+                type: "BigNumber";
+                hex: string;
+            };
+        } | {
+            type: "bytes32[]";
+            value: string[];
+        }))[];
+    }[];
+}, {
+    tokens: ({
+        description?: string | undefined;
+        name: string;
+        tokenId: string;
+    } & {
+        tokenMediaItems: {
+            type: string;
+            representation: string;
+            mimeType: string;
+            url: string;
+        }[];
+        tokenUrls: {
+            type: string;
+            url: string;
+        }[];
+    })[];
+    claimPhases: {
+        mintPriceInWei: string;
+        mintMethod: string;
+        mintArgs: ({
+            name: string;
+        } & ({
+            type: "address";
+            value: "string";
+        } | {
+            type: "uint256";
+            value: {
+                type: "BigNumber";
+                hex: string;
+            };
+        } | {
+            type: "bytes32[]";
+            value: string[];
+        }))[];
+    }[];
+}>>;
+export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
+    type: z.ZodString;
+    collection: z.ZodOptional<z.ZodIntersection<z.ZodObject<{
+        networkName: z.ZodString;
+        contractAddress: z.ZodString;
+        thumbnailUrl: z.ZodString;
+        name: z.ZodString;
+        description: z.ZodOptional<z.ZodString>;
+    }, "strip", z.ZodTypeAny, {
+        description?: string | undefined;
+        networkName: string;
+        contractAddress: string;
+        thumbnailUrl: string;
+        name: string;
+    }, {
+        description?: string | undefined;
+        networkName: string;
+        contractAddress: string;
+        thumbnailUrl: string;
+        name: string;
+    }>, z.ZodObject<{
+        tokens: z.ZodArray<z.ZodIntersection<z.ZodObject<{
+            name: z.ZodString;
+            description: z.ZodOptional<z.ZodString>;
+            tokenId: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            description?: string | undefined;
+            name: string;
+            tokenId: string;
+        }, {
+            description?: string | undefined;
+            name: string;
+            tokenId: string;
+        }>, z.ZodObject<{
+            tokenMediaItems: z.ZodArray<z.ZodObject<{
+                representation: z.ZodString;
+                type: z.ZodString;
+                mimeType: z.ZodString;
+                url: z.ZodString;
+            }, "strip", z.ZodTypeAny, {
+                type: string;
+                representation: string;
+                mimeType: string;
+                url: string;
+            }, {
+                type: string;
+                representation: string;
+                mimeType: string;
+                url: string;
+            }>, "many">;
+            tokenUrls: z.ZodArray<z.ZodObject<{
+                type: z.ZodString;
+                url: z.ZodString;
+            }, "strip", z.ZodTypeAny, {
+                type: string;
+                url: string;
+            }, {
+                type: string;
+                url: string;
+            }>, "many">;
+        }, "strip", z.ZodTypeAny, {
+            tokenMediaItems: {
+                type: string;
+                representation: string;
+                mimeType: string;
+                url: string;
+            }[];
+            tokenUrls: {
+                type: string;
+                url: string;
+            }[];
+        }, {
+            tokenMediaItems: {
+                type: string;
+                representation: string;
+                mimeType: string;
+                url: string;
+            }[];
+            tokenUrls: {
+                type: string;
+                url: string;
+            }[];
+        }>>, "many">;
+        claimPhases: z.ZodArray<z.ZodObject<{
+            mintMethod: z.ZodString;
+            mintArgs: z.ZodArray<z.ZodIntersection<z.ZodObject<{
+                name: z.ZodString;
+            }, "strip", z.ZodTypeAny, {
+                name: string;
+            }, {
+                name: string;
+            }>, z.ZodUnion<[z.ZodObject<{
+                type: z.ZodLiteral<"address">;
+                value: z.ZodLiteral<"string">;
+            }, "strip", z.ZodTypeAny, {
+                type: "address";
+                value: "string";
+            }, {
+                type: "address";
+                value: "string";
+            }>, z.ZodObject<{
+                type: z.ZodLiteral<"uint256">;
+                value: z.ZodObject<{
+                    type: z.ZodLiteral<"BigNumber">;
+                    hex: z.ZodString;
+                }, "strip", z.ZodTypeAny, {
+                    type: "BigNumber";
+                    hex: string;
+                }, {
+                    type: "BigNumber";
+                    hex: string;
+                }>;
+            }, "strip", z.ZodTypeAny, {
+                type: "uint256";
+                value: {
+                    type: "BigNumber";
+                    hex: string;
+                };
+            }, {
+                type: "uint256";
+                value: {
+                    type: "BigNumber";
+                    hex: string;
+                };
+            }>, z.ZodObject<{
+                type: z.ZodLiteral<"bytes32[]">;
+                value: z.ZodArray<z.ZodString, "many">;
+            }, "strip", z.ZodTypeAny, {
+                type: "bytes32[]";
+                value: string[];
+            }, {
+                type: "bytes32[]";
+                value: string[];
+            }>]>>, "many">;
+            mintPriceInWei: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            mintPriceInWei: string;
+            mintMethod: string;
+            mintArgs: ({
+                name: string;
+            } & ({
+                type: "address";
+                value: "string";
+            } | {
+                type: "uint256";
+                value: {
+                    type: "BigNumber";
+                    hex: string;
+                };
+            } | {
+                type: "bytes32[]";
+                value: string[];
+            }))[];
+        }, {
+            mintPriceInWei: string;
+            mintMethod: string;
+            mintArgs: ({
+                name: string;
+            } & ({
+                type: "address";
+                value: "string";
+            } | {
+                type: "uint256";
+                value: {
+                    type: "BigNumber";
+                    hex: string;
+                };
+            } | {
+                type: "bytes32[]";
+                value: string[];
+            }))[];
+        }>, "many">;
+    }, "strip", z.ZodTypeAny, {
+        tokens: ({
+            description?: string | undefined;
+            name: string;
+            tokenId: string;
+        } & {
+            tokenMediaItems: {
+                type: string;
+                representation: string;
+                mimeType: string;
+                url: string;
+            }[];
+            tokenUrls: {
+                type: string;
+                url: string;
+            }[];
+        })[];
+        claimPhases: {
+            mintPriceInWei: string;
+            mintMethod: string;
+            mintArgs: ({
+                name: string;
+            } & ({
+                type: "address";
+                value: "string";
+            } | {
+                type: "uint256";
+                value: {
+                    type: "BigNumber";
+                    hex: string;
+                };
+            } | {
+                type: "bytes32[]";
+                value: string[];
+            }))[];
+        }[];
+    }, {
+        tokens: ({
+            description?: string | undefined;
+            name: string;
+            tokenId: string;
+        } & {
+            tokenMediaItems: {
+                type: string;
+                representation: string;
+                mimeType: string;
+                url: string;
+            }[];
+            tokenUrls: {
+                type: string;
+                url: string;
+            }[];
+        })[];
+        claimPhases: {
+            mintPriceInWei: string;
+            mintMethod: string;
+            mintArgs: ({
+                name: string;
+            } & ({
+                type: "address";
+                value: "string";
+            } | {
+                type: "uint256";
+                value: {
+                    type: "BigNumber";
+                    hex: string;
+                };
+            } | {
+                type: "bytes32[]";
+                value: string[];
+            }))[];
+        }[];
+    }>>>;
+    content: z.ZodOptional<z.ZodString>;
+}, "strip", z.ZodTypeAny, {
+    collection?: ({
+        description?: string | undefined;
+        networkName: string;
+        contractAddress: string;
+        thumbnailUrl: string;
+        name: string;
+    } & {
+        tokens: ({
+            description?: string | undefined;
+            name: string;
+            tokenId: string;
+        } & {
+            tokenMediaItems: {
+                type: string;
+                representation: string;
+                mimeType: string;
+                url: string;
+            }[];
+            tokenUrls: {
+                type: string;
+                url: string;
+            }[];
+        })[];
+        claimPhases: {
+            mintPriceInWei: string;
+            mintMethod: string;
+            mintArgs: ({
+                name: string;
+            } & ({
+                type: "address";
+                value: "string";
+            } | {
+                type: "uint256";
+                value: {
+                    type: "BigNumber";
+                    hex: string;
+                };
+            } | {
+                type: "bytes32[]";
+                value: string[];
+            }))[];
+        }[];
+    }) | undefined;
+    content?: string | undefined;
+    type: string;
+}, {
+    collection?: ({
+        description?: string | undefined;
+        networkName: string;
+        contractAddress: string;
+        thumbnailUrl: string;
+        name: string;
+    } & {
+        tokens: ({
+            description?: string | undefined;
+            name: string;
+            tokenId: string;
+        } & {
+            tokenMediaItems: {
+                type: string;
+                representation: string;
+                mimeType: string;
+                url: string;
+            }[];
+            tokenUrls: {
+                type: string;
+                url: string;
+            }[];
+        })[];
+        claimPhases: {
+            mintPriceInWei: string;
+            mintMethod: string;
+            mintArgs: ({
+                name: string;
+            } & ({
+                type: "address";
+                value: "string";
+            } | {
+                type: "uint256";
+                value: {
+                    type: "BigNumber";
+                    hex: string;
+                };
+            } | {
+                type: "bytes32[]";
+                value: string[];
+            }))[];
+        }[];
+    }) | undefined;
+    content?: string | undefined;
+    type: string;
+}>;
+export declare const tCurationFieldsSchema: z.ZodObject<{
+    publishedAt: z.ZodOptional<z.ZodString>;
+    curationSelections: z.ZodArray<z.ZodObject<{
+        type: z.ZodString;
+        collection: z.ZodOptional<z.ZodIntersection<z.ZodObject<{
+            networkName: z.ZodString;
+            contractAddress: z.ZodString;
+            thumbnailUrl: z.ZodString;
+            name: z.ZodString;
+            description: z.ZodOptional<z.ZodString>;
+        }, "strip", z.ZodTypeAny, {
+            description?: string | undefined;
+            networkName: string;
+            contractAddress: string;
+            thumbnailUrl: string;
+            name: string;
+        }, {
+            description?: string | undefined;
+            networkName: string;
+            contractAddress: string;
+            thumbnailUrl: string;
+            name: string;
+        }>, z.ZodObject<{
+            tokens: z.ZodArray<z.ZodIntersection<z.ZodObject<{
+                name: z.ZodString;
+                description: z.ZodOptional<z.ZodString>;
+                tokenId: z.ZodString;
+            }, "strip", z.ZodTypeAny, {
+                description?: string | undefined;
+                name: string;
+                tokenId: string;
+            }, {
+                description?: string | undefined;
+                name: string;
+                tokenId: string;
+            }>, z.ZodObject<{
+                tokenMediaItems: z.ZodArray<z.ZodObject<{
+                    representation: z.ZodString;
+                    type: z.ZodString;
+                    mimeType: z.ZodString;
+                    url: z.ZodString;
+                }, "strip", z.ZodTypeAny, {
+                    type: string;
+                    representation: string;
+                    mimeType: string;
+                    url: string;
+                }, {
+                    type: string;
+                    representation: string;
+                    mimeType: string;
+                    url: string;
+                }>, "many">;
+                tokenUrls: z.ZodArray<z.ZodObject<{
+                    type: z.ZodString;
+                    url: z.ZodString;
+                }, "strip", z.ZodTypeAny, {
+                    type: string;
+                    url: string;
+                }, {
+                    type: string;
+                    url: string;
+                }>, "many">;
+            }, "strip", z.ZodTypeAny, {
+                tokenMediaItems: {
+                    type: string;
+                    representation: string;
+                    mimeType: string;
+                    url: string;
+                }[];
+                tokenUrls: {
+                    type: string;
+                    url: string;
+                }[];
+            }, {
+                tokenMediaItems: {
+                    type: string;
+                    representation: string;
+                    mimeType: string;
+                    url: string;
+                }[];
+                tokenUrls: {
+                    type: string;
+                    url: string;
+                }[];
+            }>>, "many">;
+            claimPhases: z.ZodArray<z.ZodObject<{
+                mintMethod: z.ZodString;
+                mintArgs: z.ZodArray<z.ZodIntersection<z.ZodObject<{
+                    name: z.ZodString;
+                }, "strip", z.ZodTypeAny, {
+                    name: string;
+                }, {
+                    name: string;
+                }>, z.ZodUnion<[z.ZodObject<{
+                    type: z.ZodLiteral<"address">;
+                    value: z.ZodLiteral<"string">;
+                }, "strip", z.ZodTypeAny, {
+                    type: "address";
+                    value: "string";
+                }, {
+                    type: "address";
+                    value: "string";
+                }>, z.ZodObject<{
+                    type: z.ZodLiteral<"uint256">;
+                    value: z.ZodObject<{
+                        type: z.ZodLiteral<"BigNumber">;
+                        hex: z.ZodString;
+                    }, "strip", z.ZodTypeAny, {
+                        type: "BigNumber";
+                        hex: string;
+                    }, {
+                        type: "BigNumber";
+                        hex: string;
+                    }>;
+                }, "strip", z.ZodTypeAny, {
+                    type: "uint256";
+                    value: {
+                        type: "BigNumber";
+                        hex: string;
+                    };
+                }, {
+                    type: "uint256";
+                    value: {
+                        type: "BigNumber";
+                        hex: string;
+                    };
+                }>, z.ZodObject<{
+                    type: z.ZodLiteral<"bytes32[]">;
+                    value: z.ZodArray<z.ZodString, "many">;
+                }, "strip", z.ZodTypeAny, {
+                    type: "bytes32[]";
+                    value: string[];
+                }, {
+                    type: "bytes32[]";
+                    value: string[];
+                }>]>>, "many">;
+                mintPriceInWei: z.ZodString;
+            }, "strip", z.ZodTypeAny, {
+                mintPriceInWei: string;
+                mintMethod: string;
+                mintArgs: ({
+                    name: string;
+                } & ({
+                    type: "address";
+                    value: "string";
+                } | {
+                    type: "uint256";
+                    value: {
+                        type: "BigNumber";
+                        hex: string;
+                    };
+                } | {
+                    type: "bytes32[]";
+                    value: string[];
+                }))[];
+            }, {
+                mintPriceInWei: string;
+                mintMethod: string;
+                mintArgs: ({
+                    name: string;
+                } & ({
+                    type: "address";
+                    value: "string";
+                } | {
+                    type: "uint256";
+                    value: {
+                        type: "BigNumber";
+                        hex: string;
+                    };
+                } | {
+                    type: "bytes32[]";
+                    value: string[];
+                }))[];
+            }>, "many">;
+        }, "strip", z.ZodTypeAny, {
+            tokens: ({
+                description?: string | undefined;
+                name: string;
+                tokenId: string;
+            } & {
+                tokenMediaItems: {
+                    type: string;
+                    representation: string;
+                    mimeType: string;
+                    url: string;
+                }[];
+                tokenUrls: {
+                    type: string;
+                    url: string;
+                }[];
+            })[];
+            claimPhases: {
+                mintPriceInWei: string;
+                mintMethod: string;
+                mintArgs: ({
+                    name: string;
+                } & ({
+                    type: "address";
+                    value: "string";
+                } | {
+                    type: "uint256";
+                    value: {
+                        type: "BigNumber";
+                        hex: string;
+                    };
+                } | {
+                    type: "bytes32[]";
+                    value: string[];
+                }))[];
+            }[];
+        }, {
+            tokens: ({
+                description?: string | undefined;
+                name: string;
+                tokenId: string;
+            } & {
+                tokenMediaItems: {
+                    type: string;
+                    representation: string;
+                    mimeType: string;
+                    url: string;
+                }[];
+                tokenUrls: {
+                    type: string;
+                    url: string;
+                }[];
+            })[];
+            claimPhases: {
+                mintPriceInWei: string;
+                mintMethod: string;
+                mintArgs: ({
+                    name: string;
+                } & ({
+                    type: "address";
+                    value: "string";
+                } | {
+                    type: "uint256";
+                    value: {
+                        type: "BigNumber";
+                        hex: string;
+                    };
+                } | {
+                    type: "bytes32[]";
+                    value: string[];
+                }))[];
+            }[];
+        }>>>;
+        content: z.ZodOptional<z.ZodString>;
+    }, "strip", z.ZodTypeAny, {
+        collection?: ({
+            description?: string | undefined;
+            networkName: string;
+            contractAddress: string;
+            thumbnailUrl: string;
+            name: string;
+        } & {
+            tokens: ({
+                description?: string | undefined;
+                name: string;
+                tokenId: string;
+            } & {
+                tokenMediaItems: {
+                    type: string;
+                    representation: string;
+                    mimeType: string;
+                    url: string;
+                }[];
+                tokenUrls: {
+                    type: string;
+                    url: string;
+                }[];
+            })[];
+            claimPhases: {
+                mintPriceInWei: string;
+                mintMethod: string;
+                mintArgs: ({
+                    name: string;
+                } & ({
+                    type: "address";
+                    value: "string";
+                } | {
+                    type: "uint256";
+                    value: {
+                        type: "BigNumber";
+                        hex: string;
+                    };
+                } | {
+                    type: "bytes32[]";
+                    value: string[];
+                }))[];
+            }[];
+        }) | undefined;
+        content?: string | undefined;
+        type: string;
+    }, {
+        collection?: ({
+            description?: string | undefined;
+            networkName: string;
+            contractAddress: string;
+            thumbnailUrl: string;
+            name: string;
+        } & {
+            tokens: ({
+                description?: string | undefined;
+                name: string;
+                tokenId: string;
+            } & {
+                tokenMediaItems: {
+                    type: string;
+                    representation: string;
+                    mimeType: string;
+                    url: string;
+                }[];
+                tokenUrls: {
+                    type: string;
+                    url: string;
+                }[];
+            })[];
+            claimPhases: {
+                mintPriceInWei: string;
+                mintMethod: string;
+                mintArgs: ({
+                    name: string;
+                } & ({
+                    type: "address";
+                    value: "string";
+                } | {
+                    type: "uint256";
+                    value: {
+                        type: "BigNumber";
+                        hex: string;
+                    };
+                } | {
+                    type: "bytes32[]";
+                    value: string[];
+                }))[];
+            }[];
+        }) | undefined;
+        content?: string | undefined;
+        type: string;
+    }>, "many">;
+}, "strip", z.ZodTypeAny, {
+    publishedAt?: string | undefined;
+    curationSelections: {
+        collection?: ({
+            description?: string | undefined;
+            networkName: string;
+            contractAddress: string;
+            thumbnailUrl: string;
+            name: string;
+        } & {
+            tokens: ({
+                description?: string | undefined;
+                name: string;
+                tokenId: string;
+            } & {
+                tokenMediaItems: {
+                    type: string;
+                    representation: string;
+                    mimeType: string;
+                    url: string;
+                }[];
+                tokenUrls: {
+                    type: string;
+                    url: string;
+                }[];
+            })[];
+            claimPhases: {
+                mintPriceInWei: string;
+                mintMethod: string;
+                mintArgs: ({
+                    name: string;
+                } & ({
+                    type: "address";
+                    value: "string";
+                } | {
+                    type: "uint256";
+                    value: {
+                        type: "BigNumber";
+                        hex: string;
+                    };
+                } | {
+                    type: "bytes32[]";
+                    value: string[];
+                }))[];
+            }[];
+        }) | undefined;
+        content?: string | undefined;
+        type: string;
+    }[];
+}, {
+    publishedAt?: string | undefined;
+    curationSelections: {
+        collection?: ({
+            description?: string | undefined;
+            networkName: string;
+            contractAddress: string;
+            thumbnailUrl: string;
+            name: string;
+        } & {
+            tokens: ({
+                description?: string | undefined;
+                name: string;
+                tokenId: string;
+            } & {
+                tokenMediaItems: {
+                    type: string;
+                    representation: string;
+                    mimeType: string;
+                    url: string;
+                }[];
+                tokenUrls: {
+                    type: string;
+                    url: string;
+                }[];
+            })[];
+            claimPhases: {
+                mintPriceInWei: string;
+                mintMethod: string;
+                mintArgs: ({
+                    name: string;
+                } & ({
+                    type: "address";
+                    value: "string";
+                } | {
+                    type: "uint256";
+                    value: {
+                        type: "BigNumber";
+                        hex: string;
+                    };
+                } | {
+                    type: "bytes32[]";
+                    value: string[];
+                }))[];
+            }[];
+        }) | undefined;
+        content?: string | undefined;
+        type: string;
+    }[];
 }>;
