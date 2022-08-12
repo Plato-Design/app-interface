@@ -91,6 +91,28 @@ export declare const tMintArgBignumValueSchema: z.ZodObject<{
     type: "BigNumber";
     hex: string;
 }>;
+export declare const tABIElementSchema: z.ZodObject<{
+    name: z.ZodOptional<z.ZodString>;
+    type: z.ZodUnion<[z.ZodLiteral<"error">, z.ZodLiteral<"event">, z.ZodLiteral<"function">, z.ZodLiteral<"constructor">]>;
+    anonymous: z.ZodOptional<z.ZodBoolean>;
+    stateMutability: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"view">, z.ZodLiteral<"nonpayable">, z.ZodLiteral<"payable">]>>;
+    inputs: z.ZodArray<z.ZodAny, "many">;
+    outputs: z.ZodArray<z.ZodAny, "many">;
+}, "strip", z.ZodTypeAny, {
+    name?: string | undefined;
+    anonymous?: boolean | undefined;
+    stateMutability?: "view" | "nonpayable" | "payable" | undefined;
+    type: "function" | "error" | "event" | "constructor";
+    inputs: any[];
+    outputs: any[];
+}, {
+    name?: string | undefined;
+    anonymous?: boolean | undefined;
+    stateMutability?: "view" | "nonpayable" | "payable" | undefined;
+    type: "function" | "error" | "event" | "constructor";
+    inputs: any[];
+    outputs: any[];
+}>;
 export declare const tCollectionsListQueryDataSchema: z.ZodIntersection<z.ZodObject<{
     skip: z.ZodNumber;
     take: z.ZodNumber;

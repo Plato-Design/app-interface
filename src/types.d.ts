@@ -95,3 +95,11 @@ export declare type TMintArgBignumValue = {
     type: "BigNumber";
     hex: string;
 };
+export declare type TABIElement = {
+    name?: string;
+    type: "error" | "event" | "function" | "constructor";
+    anonymous?: boolean;
+    stateMutability?: "view" | "nonpayable" | "payable";
+    inputs: any[];
+    outputs: any[];
+};

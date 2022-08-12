@@ -47,6 +47,22 @@ export const tMintArgBignumValueSchema = z.object({
   hex: z.string(),
 });
 
+export const tABIElementSchema = z.object({
+  name: z.string().optional(),
+  type: z.union([
+    z.literal("error"),
+    z.literal("event"),
+    z.literal("function"),
+    z.literal("constructor"),
+  ]),
+  anonymous: z.boolean().optional(),
+  stateMutability: z
+    .union([z.literal("view"), z.literal("nonpayable"), z.literal("payable")])
+    .optional(),
+  inputs: z.array(z.any()),
+  outputs: z.array(z.any()),
+});
+
 export const tCollectionsListQueryDataSchema = tPaginatedEndpointQueryDataSchema.and(
   z.object({
     maxTokensPerCollection: z.number().optional(),

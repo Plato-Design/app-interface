@@ -128,3 +128,12 @@ export type TMintArgBignumValue = {
   type: "BigNumber";
   hex: string;
 };
+
+export type TABIElement = {
+  name?: string
+  type: "error" | "event" | "function" | "constructor"
+  anonymous?: boolean
+  stateMutability?: "view" | "nonpayable" | "payable"
+  inputs: any[]
+  outputs: any[]
+}
