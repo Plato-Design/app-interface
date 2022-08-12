@@ -7,7 +7,10 @@ export type TCollectionsListQueryData = TPaginatedEndpointQueryData & {
 };
 
 export type TCollectionsListResponseData = {
-  collections: TCollectionFields[];
+  collections: (TCollectionFields & {
+    id: string;
+    mintOptions: TMintOption[];
+  })[];
 };
 
 export type TPaginatedEndpointQueryData = {
@@ -47,9 +50,19 @@ export type TCollectionFields = TCollectionFieldsFlat & {
 
 export type TClaimPhaseFields = {
   mintMethod: string;
-  mintArgs: string;
+  mintArgs: JsonValue;
   mintPriceInWei: string;
 };
+
+export type JsonValue =
+  | string
+  | number
+  | boolean
+  | null
+  | JsonObject
+  | JsonArray;
+export type JsonArray = JsonValue[];
+export type JsonObject = { [key: string]: JsonValue };
 
 export type TTokenFieldsFlat = {
   name: string;
@@ -72,4 +85,41 @@ export type TTokenMediaItemFields = {
 export type TTokenUrlFields = {
   type: string;
   url: string;
+};
+
+export type TMintOption = {
+  networkName: string;
+  contractAddress: string;
+  mintQuantity: number;
+  mintPriceInWei: string;
+  mintMethod: string;
+  mintArgs: TMintOptionMintArg[];
+};
+
+export type TMintOptionMintArg = string | number | null;
+
+export type TCallableMintOption = TMintOption & {
+  executeMint: () => void;
+};
+
+export type TRawMintArg = {
+  name: string;
+} & (
+  | {
+      type: "address";
+      value: "string";
+    }
+  | {
+      type: "uint256";
+      value: TMintArgBignumValue;
+    }
+  | {
+      type: "bytes32[]";
+      value: string[];
+    }
+);
+
+export type TMintArgBignumValue = {
+  type: "BigNumber";
+  hex: string;
 };

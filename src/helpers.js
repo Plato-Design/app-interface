@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-exports.serialize = void 0;
+exports.safeJsonParse = exports.serialize = void 0;
 function serialize(v) {
     if (typeof v === "string" || typeof v === "number" || typeof v === "boolean") {
         return v;
@@ -24,3 +24,12 @@ function serialize(v) {
     return v + "";
 }
 exports.serialize = serialize;
+function safeJsonParse(data) {
+    try {
+        return JSON.parse(data);
+    }
+    catch (exception) {
+        return null;
+    }
+}
+exports.safeJsonParse = safeJsonParse;
