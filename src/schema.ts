@@ -32,10 +32,12 @@ export const tCollectionFieldsFlatSchema = z.object({
   metadataSource: z.string(),
   mediaSource: z.string(),
   contractKind: z.string(),
-  floor: z.object({
-    amount: z.string(),
-    currency: z.string(),
-  }),
+  floor: z
+    .object({
+      amount: z.string(),
+      currency: z.string(),
+    })
+    .optional(),
 });
 
 export const tTokenFieldsFlatSchema = z.object({

@@ -30,10 +30,12 @@ exports.tCollectionFieldsFlatSchema = zod_1.z.object({
     metadataSource: zod_1.z.string(),
     mediaSource: zod_1.z.string(),
     contractKind: zod_1.z.string(),
-    floor: zod_1.z.object({
+    floor: zod_1.z
+        .object({
         amount: zod_1.z.string(),
         currency: zod_1.z.string()
     })
+        .optional()
 });
 exports.tTokenFieldsFlatSchema = zod_1.z.object({
     name: zod_1.z.string(),

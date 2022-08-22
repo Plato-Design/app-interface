@@ -56,7 +56,7 @@ export type TCollectionFieldsFlat = {
   metadataSource: string
   mediaSource: string
   contractKind: string
-  floor: {
+  floor?: {
     amount: string;
     currency: string;
   }
