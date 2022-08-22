@@ -32,7 +32,23 @@ export declare type TCollectionFieldsFlat = {
     contractAddress: string;
     thumbnailUrl: string;
     name: string;
-    description?: string;
+    description: string;
+    urls: {
+        type: string;
+        url: string;
+    }[];
+    mintsLastHour: number;
+    lastEvent: string;
+    firstEvent: string;
+    totalMints: number;
+    maxSupply: number;
+    metadataSource: string;
+    mediaSource: string;
+    contractKind: string;
+    floor: {
+        amount: string;
+        currency: string;
+    };
 };
 export declare type TCollectionFields = TCollectionFieldsFlat & {
     tokens: TTokenFields[];

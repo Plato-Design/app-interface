@@ -17,7 +17,25 @@ export const tCollectionFieldsFlatSchema = z.object({
   contractAddress: z.string(),
   thumbnailUrl: z.string(),
   name: z.string(),
-  description: z.string().optional(),
+  description: z.string(),
+  urls: z.array(
+    z.object({
+      type: z.string(),
+      url: z.string(),
+    })
+  ),
+  mintsLastHour: z.number(),
+  lastEvent: z.string(),
+  firstEvent: z.string(),
+  totalMints: z.number(),
+  maxSupply: z.number(),
+  metadataSource: z.string(),
+  mediaSource: z.string(),
+  contractKind: z.string(),
+  floor: z.object({
+    amount: z.string(),
+    currency: z.string(),
+  }),
 });
 
 export const tTokenFieldsFlatSchema = z.object({

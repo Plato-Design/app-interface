@@ -17,7 +17,23 @@ exports.tCollectionFieldsFlatSchema = zod_1.z.object({
     contractAddress: zod_1.z.string(),
     thumbnailUrl: zod_1.z.string(),
     name: zod_1.z.string(),
-    description: zod_1.z.string().optional()
+    description: zod_1.z.string(),
+    urls: zod_1.z.array(zod_1.z.object({
+        type: zod_1.z.string(),
+        url: zod_1.z.string()
+    })),
+    mintsLastHour: zod_1.z.number(),
+    lastEvent: zod_1.z.string(),
+    firstEvent: zod_1.z.string(),
+    totalMints: zod_1.z.number(),
+    maxSupply: zod_1.z.number(),
+    metadataSource: zod_1.z.string(),
+    mediaSource: zod_1.z.string(),
+    contractKind: zod_1.z.string(),
+    floor: zod_1.z.object({
+        amount: zod_1.z.string(),
+        currency: zod_1.z.string()
+    })
 });
 exports.tTokenFieldsFlatSchema = zod_1.z.object({
     name: zod_1.z.string(),

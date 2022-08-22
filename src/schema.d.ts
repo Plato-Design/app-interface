@@ -27,19 +27,79 @@ export declare const tCollectionFieldsFlatSchema: z.ZodObject<{
     contractAddress: z.ZodString;
     thumbnailUrl: z.ZodString;
     name: z.ZodString;
-    description: z.ZodOptional<z.ZodString>;
+    description: z.ZodString;
+    urls: z.ZodArray<z.ZodObject<{
+        type: z.ZodString;
+        url: z.ZodString;
+    }, "strip", z.ZodTypeAny, {
+        type: string;
+        url: string;
+    }, {
+        type: string;
+        url: string;
+    }>, "many">;
+    mintsLastHour: z.ZodNumber;
+    lastEvent: z.ZodString;
+    firstEvent: z.ZodString;
+    totalMints: z.ZodNumber;
+    maxSupply: z.ZodNumber;
+    metadataSource: z.ZodString;
+    mediaSource: z.ZodString;
+    contractKind: z.ZodString;
+    floor: z.ZodObject<{
+        amount: z.ZodString;
+        currency: z.ZodString;
+    }, "strip", z.ZodTypeAny, {
+        amount: string;
+        currency: string;
+    }, {
+        amount: string;
+        currency: string;
+    }>;
 }, "strip", z.ZodTypeAny, {
-    description?: string | undefined;
     networkName: string;
     contractAddress: string;
     thumbnailUrl: string;
     name: string;
+    description: string;
+    urls: {
+        type: string;
+        url: string;
+    }[];
+    mintsLastHour: number;
+    lastEvent: string;
+    firstEvent: string;
+    totalMints: number;
+    maxSupply: number;
+    metadataSource: string;
+    mediaSource: string;
+    contractKind: string;
+    floor: {
+        amount: string;
+        currency: string;
+    };
 }, {
-    description?: string | undefined;
     networkName: string;
     contractAddress: string;
     thumbnailUrl: string;
     name: string;
+    description: string;
+    urls: {
+        type: string;
+        url: string;
+    }[];
+    mintsLastHour: number;
+    lastEvent: string;
+    firstEvent: string;
+    totalMints: number;
+    maxSupply: number;
+    metadataSource: string;
+    mediaSource: string;
+    contractKind: string;
+    floor: {
+        amount: string;
+        currency: string;
+    };
 }>;
 export declare const tTokenFieldsFlatSchema: z.ZodObject<{
     name: z.ZodString;
@@ -61,14 +121,14 @@ export declare const tTokenMediaItemFieldsSchema: z.ZodObject<{
     url: z.ZodString;
 }, "strip", z.ZodTypeAny, {
     type: string;
+    url: string;
     representation: string;
     mimeType: string;
-    url: string;
 }, {
     type: string;
+    url: string;
     representation: string;
     mimeType: string;
-    url: string;
 }>;
 export declare const tTokenUrlFieldsSchema: z.ZodObject<{
     type: z.ZodString;
@@ -149,14 +209,14 @@ export declare const tTokenFieldsSchema: z.ZodIntersection<z.ZodObject<{
         url: z.ZodString;
     }, "strip", z.ZodTypeAny, {
         type: string;
+        url: string;
         representation: string;
         mimeType: string;
-        url: string;
     }, {
         type: string;
+        url: string;
         representation: string;
         mimeType: string;
-        url: string;
     }>, "many">;
     tokenUrls: z.ZodArray<z.ZodObject<{
         type: z.ZodString;
@@ -171,9 +231,9 @@ export declare const tTokenFieldsSchema: z.ZodIntersection<z.ZodObject<{
 }, "strip", z.ZodTypeAny, {
     tokenMediaItems: {
         type: string;
+        url: string;
         representation: string;
         mimeType: string;
-        url: string;
     }[];
     tokenUrls: {
         type: string;
@@ -182,9 +242,9 @@ export declare const tTokenFieldsSchema: z.ZodIntersection<z.ZodObject<{
 }, {
     tokenMediaItems: {
         type: string;
+        url: string;
         representation: string;
         mimeType: string;
-        url: string;
     }[];
     tokenUrls: {
         type: string;
@@ -295,19 +355,79 @@ export declare const tCollectionFieldsSimplifiedSchema: z.ZodIntersection<z.ZodO
     contractAddress: z.ZodString;
     thumbnailUrl: z.ZodString;
     name: z.ZodString;
-    description: z.ZodOptional<z.ZodString>;
+    description: z.ZodString;
+    urls: z.ZodArray<z.ZodObject<{
+        type: z.ZodString;
+        url: z.ZodString;
+    }, "strip", z.ZodTypeAny, {
+        type: string;
+        url: string;
+    }, {
+        type: string;
+        url: string;
+    }>, "many">;
+    mintsLastHour: z.ZodNumber;
+    lastEvent: z.ZodString;
+    firstEvent: z.ZodString;
+    totalMints: z.ZodNumber;
+    maxSupply: z.ZodNumber;
+    metadataSource: z.ZodString;
+    mediaSource: z.ZodString;
+    contractKind: z.ZodString;
+    floor: z.ZodObject<{
+        amount: z.ZodString;
+        currency: z.ZodString;
+    }, "strip", z.ZodTypeAny, {
+        amount: string;
+        currency: string;
+    }, {
+        amount: string;
+        currency: string;
+    }>;
 }, "strip", z.ZodTypeAny, {
-    description?: string | undefined;
     networkName: string;
     contractAddress: string;
     thumbnailUrl: string;
     name: string;
+    description: string;
+    urls: {
+        type: string;
+        url: string;
+    }[];
+    mintsLastHour: number;
+    lastEvent: string;
+    firstEvent: string;
+    totalMints: number;
+    maxSupply: number;
+    metadataSource: string;
+    mediaSource: string;
+    contractKind: string;
+    floor: {
+        amount: string;
+        currency: string;
+    };
 }, {
-    description?: string | undefined;
     networkName: string;
     contractAddress: string;
     thumbnailUrl: string;
     name: string;
+    description: string;
+    urls: {
+        type: string;
+        url: string;
+    }[];
+    mintsLastHour: number;
+    lastEvent: string;
+    firstEvent: string;
+    totalMints: number;
+    maxSupply: number;
+    metadataSource: string;
+    mediaSource: string;
+    contractKind: string;
+    floor: {
+        amount: string;
+        currency: string;
+    };
 }>, z.ZodObject<{
     id: z.ZodString;
     tokenMediaItems: z.ZodArray<z.ZodObject<{
@@ -317,14 +437,14 @@ export declare const tCollectionFieldsSimplifiedSchema: z.ZodIntersection<z.ZodO
         url: z.ZodString;
     }, "strip", z.ZodTypeAny, {
         type: string;
+        url: string;
         representation: string;
         mimeType: string;
-        url: string;
     }, {
         type: string;
+        url: string;
         representation: string;
         mimeType: string;
-        url: string;
     }>, "many">;
     mintOptions: z.ZodArray<z.ZodObject<{
         networkName: z.ZodString;
@@ -352,9 +472,9 @@ export declare const tCollectionFieldsSimplifiedSchema: z.ZodIntersection<z.ZodO
     id: string;
     tokenMediaItems: {
         type: string;
+        url: string;
         representation: string;
         mimeType: string;
-        url: string;
     }[];
     mintOptions: {
         networkName: string;
@@ -368,9 +488,9 @@ export declare const tCollectionFieldsSimplifiedSchema: z.ZodIntersection<z.ZodO
     id: string;
     tokenMediaItems: {
         type: string;
+        url: string;
         representation: string;
         mimeType: string;
-        url: string;
     }[];
     mintOptions: {
         networkName: string;
@@ -476,19 +596,79 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
         contractAddress: z.ZodString;
         thumbnailUrl: z.ZodString;
         name: z.ZodString;
-        description: z.ZodOptional<z.ZodString>;
+        description: z.ZodString;
+        urls: z.ZodArray<z.ZodObject<{
+            type: z.ZodString;
+            url: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            type: string;
+            url: string;
+        }, {
+            type: string;
+            url: string;
+        }>, "many">;
+        mintsLastHour: z.ZodNumber;
+        lastEvent: z.ZodString;
+        firstEvent: z.ZodString;
+        totalMints: z.ZodNumber;
+        maxSupply: z.ZodNumber;
+        metadataSource: z.ZodString;
+        mediaSource: z.ZodString;
+        contractKind: z.ZodString;
+        floor: z.ZodObject<{
+            amount: z.ZodString;
+            currency: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            amount: string;
+            currency: string;
+        }, {
+            amount: string;
+            currency: string;
+        }>;
     }, "strip", z.ZodTypeAny, {
-        description?: string | undefined;
         networkName: string;
         contractAddress: string;
         thumbnailUrl: string;
         name: string;
+        description: string;
+        urls: {
+            type: string;
+            url: string;
+        }[];
+        mintsLastHour: number;
+        lastEvent: string;
+        firstEvent: string;
+        totalMints: number;
+        maxSupply: number;
+        metadataSource: string;
+        mediaSource: string;
+        contractKind: string;
+        floor: {
+            amount: string;
+            currency: string;
+        };
     }, {
-        description?: string | undefined;
         networkName: string;
         contractAddress: string;
         thumbnailUrl: string;
         name: string;
+        description: string;
+        urls: {
+            type: string;
+            url: string;
+        }[];
+        mintsLastHour: number;
+        lastEvent: string;
+        firstEvent: string;
+        totalMints: number;
+        maxSupply: number;
+        metadataSource: string;
+        mediaSource: string;
+        contractKind: string;
+        floor: {
+            amount: string;
+            currency: string;
+        };
     }>, z.ZodObject<{
         id: z.ZodString;
         tokenMediaItems: z.ZodArray<z.ZodObject<{
@@ -498,14 +678,14 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
             url: z.ZodString;
         }, "strip", z.ZodTypeAny, {
             type: string;
+            url: string;
             representation: string;
             mimeType: string;
-            url: string;
         }, {
             type: string;
+            url: string;
             representation: string;
             mimeType: string;
-            url: string;
         }>, "many">;
         mintOptions: z.ZodArray<z.ZodObject<{
             networkName: z.ZodString;
@@ -533,9 +713,9 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
         id: string;
         tokenMediaItems: {
             type: string;
+            url: string;
             representation: string;
             mimeType: string;
-            url: string;
         }[];
         mintOptions: {
             networkName: string;
@@ -549,9 +729,9 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
         id: string;
         tokenMediaItems: {
             type: string;
+            url: string;
             representation: string;
             mimeType: string;
-            url: string;
         }[];
         mintOptions: {
             networkName: string;
@@ -564,18 +744,34 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
     }>>, "many">;
 }, "strip", z.ZodTypeAny, {
     collections: ({
-        description?: string | undefined;
         networkName: string;
         contractAddress: string;
         thumbnailUrl: string;
         name: string;
+        description: string;
+        urls: {
+            type: string;
+            url: string;
+        }[];
+        mintsLastHour: number;
+        lastEvent: string;
+        firstEvent: string;
+        totalMints: number;
+        maxSupply: number;
+        metadataSource: string;
+        mediaSource: string;
+        contractKind: string;
+        floor: {
+            amount: string;
+            currency: string;
+        };
     } & {
         id: string;
         tokenMediaItems: {
             type: string;
+            url: string;
             representation: string;
             mimeType: string;
-            url: string;
         }[];
         mintOptions: {
             networkName: string;
@@ -588,18 +784,34 @@ export declare const tCollectionsListResponseDataSchema: z.ZodObject<{
     })[];
 }, {
     collections: ({
-        description?: string | undefined;
         networkName: string;
         contractAddress: string;
         thumbnailUrl: string;
         name: string;
+        description: string;
+        urls: {
+            type: string;
+            url: string;
+        }[];
+        mintsLastHour: number;
+        lastEvent: string;
+        firstEvent: string;
+        totalMints: number;
+        maxSupply: number;
+        metadataSource: string;
+        mediaSource: string;
+        contractKind: string;
+        floor: {
+            amount: string;
+            currency: string;
+        };
     } & {
         id: string;
         tokenMediaItems: {
             type: string;
+            url: string;
             representation: string;
             mimeType: string;
-            url: string;
         }[];
         mintOptions: {
             networkName: string;
@@ -616,19 +828,79 @@ export declare const tCollectionFieldsSchema: z.ZodIntersection<z.ZodObject<{
     contractAddress: z.ZodString;
     thumbnailUrl: z.ZodString;
     name: z.ZodString;
-    description: z.ZodOptional<z.ZodString>;
+    description: z.ZodString;
+    urls: z.ZodArray<z.ZodObject<{
+        type: z.ZodString;
+        url: z.ZodString;
+    }, "strip", z.ZodTypeAny, {
+        type: string;
+        url: string;
+    }, {
+        type: string;
+        url: string;
+    }>, "many">;
+    mintsLastHour: z.ZodNumber;
+    lastEvent: z.ZodString;
+    firstEvent: z.ZodString;
+    totalMints: z.ZodNumber;
+    maxSupply: z.ZodNumber;
+    metadataSource: z.ZodString;
+    mediaSource: z.ZodString;
+    contractKind: z.ZodString;
+    floor: z.ZodObject<{
+        amount: z.ZodString;
+        currency: z.ZodString;
+    }, "strip", z.ZodTypeAny, {
+        amount: string;
+        currency: string;
+    }, {
+        amount: string;
+        currency: string;
+    }>;
 }, "strip", z.ZodTypeAny, {
-    description?: string | undefined;
     networkName: string;
     contractAddress: string;
     thumbnailUrl: string;
     name: string;
+    description: string;
+    urls: {
+        type: string;
+        url: string;
+    }[];
+    mintsLastHour: number;
+    lastEvent: string;
+    firstEvent: string;
+    totalMints: number;
+    maxSupply: number;
+    metadataSource: string;
+    mediaSource: string;
+    contractKind: string;
+    floor: {
+        amount: string;
+        currency: string;
+    };
 }, {
-    description?: string | undefined;
     networkName: string;
     contractAddress: string;
     thumbnailUrl: string;
     name: string;
+    description: string;
+    urls: {
+        type: string;
+        url: string;
+    }[];
+    mintsLastHour: number;
+    lastEvent: string;
+    firstEvent: string;
+    totalMints: number;
+    maxSupply: number;
+    metadataSource: string;
+    mediaSource: string;
+    contractKind: string;
+    floor: {
+        amount: string;
+        currency: string;
+    };
 }>, z.ZodObject<{
     tokens: z.ZodArray<z.ZodIntersection<z.ZodObject<{
         name: z.ZodString;
@@ -650,14 +922,14 @@ export declare const tCollectionFieldsSchema: z.ZodIntersection<z.ZodObject<{
             url: z.ZodString;
         }, "strip", z.ZodTypeAny, {
             type: string;
+            url: string;
             representation: string;
             mimeType: string;
-            url: string;
         }, {
             type: string;
+            url: string;
             representation: string;
             mimeType: string;
-            url: string;
         }>, "many">;
         tokenUrls: z.ZodArray<z.ZodObject<{
             type: z.ZodString;
@@ -672,9 +944,9 @@ export declare const tCollectionFieldsSchema: z.ZodIntersection<z.ZodObject<{
     }, "strip", z.ZodTypeAny, {
         tokenMediaItems: {
             type: string;
+            url: string;
             representation: string;
             mimeType: string;
-            url: string;
         }[];
         tokenUrls: {
             type: string;
@@ -683,9 +955,9 @@ export declare const tCollectionFieldsSchema: z.ZodIntersection<z.ZodObject<{
     }, {
         tokenMediaItems: {
             type: string;
+            url: string;
             representation: string;
             mimeType: string;
-            url: string;
         }[];
         tokenUrls: {
             type: string;
@@ -789,9 +1061,9 @@ export declare const tCollectionFieldsSchema: z.ZodIntersection<z.ZodObject<{
     } & {
         tokenMediaItems: {
             type: string;
+            url: string;
             representation: string;
             mimeType: string;
-            url: string;
         }[];
         tokenUrls: {
             type: string;
@@ -825,9 +1097,9 @@ export declare const tCollectionFieldsSchema: z.ZodIntersection<z.ZodObject<{
     } & {
         tokenMediaItems: {
             type: string;
+            url: string;
             representation: string;
             mimeType: string;
-            url: string;
         }[];
         tokenUrls: {
             type: string;
@@ -861,19 +1133,79 @@ export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
         contractAddress: z.ZodString;
         thumbnailUrl: z.ZodString;
         name: z.ZodString;
-        description: z.ZodOptional<z.ZodString>;
+        description: z.ZodString;
+        urls: z.ZodArray<z.ZodObject<{
+            type: z.ZodString;
+            url: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            type: string;
+            url: string;
+        }, {
+            type: string;
+            url: string;
+        }>, "many">;
+        mintsLastHour: z.ZodNumber;
+        lastEvent: z.ZodString;
+        firstEvent: z.ZodString;
+        totalMints: z.ZodNumber;
+        maxSupply: z.ZodNumber;
+        metadataSource: z.ZodString;
+        mediaSource: z.ZodString;
+        contractKind: z.ZodString;
+        floor: z.ZodObject<{
+            amount: z.ZodString;
+            currency: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            amount: string;
+            currency: string;
+        }, {
+            amount: string;
+            currency: string;
+        }>;
     }, "strip", z.ZodTypeAny, {
-        description?: string | undefined;
         networkName: string;
         contractAddress: string;
         thumbnailUrl: string;
         name: string;
+        description: string;
+        urls: {
+            type: string;
+            url: string;
+        }[];
+        mintsLastHour: number;
+        lastEvent: string;
+        firstEvent: string;
+        totalMints: number;
+        maxSupply: number;
+        metadataSource: string;
+        mediaSource: string;
+        contractKind: string;
+        floor: {
+            amount: string;
+            currency: string;
+        };
     }, {
-        description?: string | undefined;
         networkName: string;
         contractAddress: string;
         thumbnailUrl: string;
         name: string;
+        description: string;
+        urls: {
+            type: string;
+            url: string;
+        }[];
+        mintsLastHour: number;
+        lastEvent: string;
+        firstEvent: string;
+        totalMints: number;
+        maxSupply: number;
+        metadataSource: string;
+        mediaSource: string;
+        contractKind: string;
+        floor: {
+            amount: string;
+            currency: string;
+        };
     }>, z.ZodObject<{
         tokens: z.ZodArray<z.ZodIntersection<z.ZodObject<{
             name: z.ZodString;
@@ -895,14 +1227,14 @@ export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
                 url: z.ZodString;
             }, "strip", z.ZodTypeAny, {
                 type: string;
+                url: string;
                 representation: string;
                 mimeType: string;
-                url: string;
             }, {
                 type: string;
+                url: string;
                 representation: string;
                 mimeType: string;
-                url: string;
             }>, "many">;
             tokenUrls: z.ZodArray<z.ZodObject<{
                 type: z.ZodString;
@@ -917,9 +1249,9 @@ export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
         }, "strip", z.ZodTypeAny, {
             tokenMediaItems: {
                 type: string;
+                url: string;
                 representation: string;
                 mimeType: string;
-                url: string;
             }[];
             tokenUrls: {
                 type: string;
@@ -928,9 +1260,9 @@ export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
         }, {
             tokenMediaItems: {
                 type: string;
+                url: string;
                 representation: string;
                 mimeType: string;
-                url: string;
             }[];
             tokenUrls: {
                 type: string;
@@ -1034,9 +1366,9 @@ export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
         } & {
             tokenMediaItems: {
                 type: string;
+                url: string;
                 representation: string;
                 mimeType: string;
-                url: string;
             }[];
             tokenUrls: {
                 type: string;
@@ -1070,9 +1402,9 @@ export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
         } & {
             tokenMediaItems: {
                 type: string;
+                url: string;
                 representation: string;
                 mimeType: string;
-                url: string;
             }[];
             tokenUrls: {
                 type: string;
@@ -1102,11 +1434,27 @@ export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
     content: z.ZodOptional<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
     collection?: ({
-        description?: string | undefined;
         networkName: string;
         contractAddress: string;
         thumbnailUrl: string;
         name: string;
+        description: string;
+        urls: {
+            type: string;
+            url: string;
+        }[];
+        mintsLastHour: number;
+        lastEvent: string;
+        firstEvent: string;
+        totalMints: number;
+        maxSupply: number;
+        metadataSource: string;
+        mediaSource: string;
+        contractKind: string;
+        floor: {
+            amount: string;
+            currency: string;
+        };
     } & {
         tokens: ({
             description?: string | undefined;
@@ -1115,9 +1463,9 @@ export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
         } & {
             tokenMediaItems: {
                 type: string;
+                url: string;
                 representation: string;
                 mimeType: string;
-                url: string;
             }[];
             tokenUrls: {
                 type: string;
@@ -1148,11 +1496,27 @@ export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
     type: string;
 }, {
     collection?: ({
-        description?: string | undefined;
         networkName: string;
         contractAddress: string;
         thumbnailUrl: string;
         name: string;
+        description: string;
+        urls: {
+            type: string;
+            url: string;
+        }[];
+        mintsLastHour: number;
+        lastEvent: string;
+        firstEvent: string;
+        totalMints: number;
+        maxSupply: number;
+        metadataSource: string;
+        mediaSource: string;
+        contractKind: string;
+        floor: {
+            amount: string;
+            currency: string;
+        };
     } & {
         tokens: ({
             description?: string | undefined;
@@ -1161,9 +1525,9 @@ export declare const tCurationSelectionFieldsSchema: z.ZodObject<{
         } & {
             tokenMediaItems: {
                 type: string;
+                url: string;
                 representation: string;
                 mimeType: string;
-                url: string;
             }[];
             tokenUrls: {
                 type: string;
@@ -1202,19 +1566,79 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
             contractAddress: z.ZodString;
             thumbnailUrl: z.ZodString;
             name: z.ZodString;
-            description: z.ZodOptional<z.ZodString>;
+            description: z.ZodString;
+            urls: z.ZodArray<z.ZodObject<{
+                type: z.ZodString;
+                url: z.ZodString;
+            }, "strip", z.ZodTypeAny, {
+                type: string;
+                url: string;
+            }, {
+                type: string;
+                url: string;
+            }>, "many">;
+            mintsLastHour: z.ZodNumber;
+            lastEvent: z.ZodString;
+            firstEvent: z.ZodString;
+            totalMints: z.ZodNumber;
+            maxSupply: z.ZodNumber;
+            metadataSource: z.ZodString;
+            mediaSource: z.ZodString;
+            contractKind: z.ZodString;
+            floor: z.ZodObject<{
+                amount: z.ZodString;
+                currency: z.ZodString;
+            }, "strip", z.ZodTypeAny, {
+                amount: string;
+                currency: string;
+            }, {
+                amount: string;
+                currency: string;
+            }>;
         }, "strip", z.ZodTypeAny, {
-            description?: string | undefined;
             networkName: string;
             contractAddress: string;
             thumbnailUrl: string;
             name: string;
+            description: string;
+            urls: {
+                type: string;
+                url: string;
+            }[];
+            mintsLastHour: number;
+            lastEvent: string;
+            firstEvent: string;
+            totalMints: number;
+            maxSupply: number;
+            metadataSource: string;
+            mediaSource: string;
+            contractKind: string;
+            floor: {
+                amount: string;
+                currency: string;
+            };
         }, {
-            description?: string | undefined;
             networkName: string;
             contractAddress: string;
             thumbnailUrl: string;
             name: string;
+            description: string;
+            urls: {
+                type: string;
+                url: string;
+            }[];
+            mintsLastHour: number;
+            lastEvent: string;
+            firstEvent: string;
+            totalMints: number;
+            maxSupply: number;
+            metadataSource: string;
+            mediaSource: string;
+            contractKind: string;
+            floor: {
+                amount: string;
+                currency: string;
+            };
         }>, z.ZodObject<{
             tokens: z.ZodArray<z.ZodIntersection<z.ZodObject<{
                 name: z.ZodString;
@@ -1236,14 +1660,14 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
                     url: z.ZodString;
                 }, "strip", z.ZodTypeAny, {
                     type: string;
+                    url: string;
                     representation: string;
                     mimeType: string;
-                    url: string;
                 }, {
                     type: string;
+                    url: string;
                     representation: string;
                     mimeType: string;
-                    url: string;
                 }>, "many">;
                 tokenUrls: z.ZodArray<z.ZodObject<{
                     type: z.ZodString;
@@ -1258,9 +1682,9 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
             }, "strip", z.ZodTypeAny, {
                 tokenMediaItems: {
                     type: string;
+                    url: string;
                     representation: string;
                     mimeType: string;
-                    url: string;
                 }[];
                 tokenUrls: {
                     type: string;
@@ -1269,9 +1693,9 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
             }, {
                 tokenMediaItems: {
                     type: string;
+                    url: string;
                     representation: string;
                     mimeType: string;
-                    url: string;
                 }[];
                 tokenUrls: {
                     type: string;
@@ -1375,9 +1799,9 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
             } & {
                 tokenMediaItems: {
                     type: string;
+                    url: string;
                     representation: string;
                     mimeType: string;
-                    url: string;
                 }[];
                 tokenUrls: {
                     type: string;
@@ -1411,9 +1835,9 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
             } & {
                 tokenMediaItems: {
                     type: string;
+                    url: string;
                     representation: string;
                     mimeType: string;
-                    url: string;
                 }[];
                 tokenUrls: {
                     type: string;
@@ -1443,11 +1867,27 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
         content: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
         collection?: ({
-            description?: string | undefined;
             networkName: string;
             contractAddress: string;
             thumbnailUrl: string;
             name: string;
+            description: string;
+            urls: {
+                type: string;
+                url: string;
+            }[];
+            mintsLastHour: number;
+            lastEvent: string;
+            firstEvent: string;
+            totalMints: number;
+            maxSupply: number;
+            metadataSource: string;
+            mediaSource: string;
+            contractKind: string;
+            floor: {
+                amount: string;
+                currency: string;
+            };
         } & {
             tokens: ({
                 description?: string | undefined;
@@ -1456,9 +1896,9 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
             } & {
                 tokenMediaItems: {
                     type: string;
+                    url: string;
                     representation: string;
                     mimeType: string;
-                    url: string;
                 }[];
                 tokenUrls: {
                     type: string;
@@ -1489,11 +1929,27 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
         type: string;
     }, {
         collection?: ({
-            description?: string | undefined;
             networkName: string;
             contractAddress: string;
             thumbnailUrl: string;
             name: string;
+            description: string;
+            urls: {
+                type: string;
+                url: string;
+            }[];
+            mintsLastHour: number;
+            lastEvent: string;
+            firstEvent: string;
+            totalMints: number;
+            maxSupply: number;
+            metadataSource: string;
+            mediaSource: string;
+            contractKind: string;
+            floor: {
+                amount: string;
+                currency: string;
+            };
         } & {
             tokens: ({
                 description?: string | undefined;
@@ -1502,9 +1958,9 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
             } & {
                 tokenMediaItems: {
                     type: string;
+                    url: string;
                     representation: string;
                     mimeType: string;
-                    url: string;
                 }[];
                 tokenUrls: {
                     type: string;
@@ -1538,11 +1994,27 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
     publishedAt?: string | undefined;
     curationSelections: {
         collection?: ({
-            description?: string | undefined;
             networkName: string;
             contractAddress: string;
             thumbnailUrl: string;
             name: string;
+            description: string;
+            urls: {
+                type: string;
+                url: string;
+            }[];
+            mintsLastHour: number;
+            lastEvent: string;
+            firstEvent: string;
+            totalMints: number;
+            maxSupply: number;
+            metadataSource: string;
+            mediaSource: string;
+            contractKind: string;
+            floor: {
+                amount: string;
+                currency: string;
+            };
         } & {
             tokens: ({
                 description?: string | undefined;
@@ -1551,9 +2023,9 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
             } & {
                 tokenMediaItems: {
                     type: string;
+                    url: string;
                     representation: string;
                     mimeType: string;
-                    url: string;
                 }[];
                 tokenUrls: {
                     type: string;
@@ -1587,11 +2059,27 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
     publishedAt?: string | undefined;
     curationSelections: {
         collection?: ({
-            description?: string | undefined;
             networkName: string;
             contractAddress: string;
             thumbnailUrl: string;
             name: string;
+            description: string;
+            urls: {
+                type: string;
+                url: string;
+            }[];
+            mintsLastHour: number;
+            lastEvent: string;
+            firstEvent: string;
+            totalMints: number;
+            maxSupply: number;
+            metadataSource: string;
+            mediaSource: string;
+            contractKind: string;
+            floor: {
+                amount: string;
+                currency: string;
+            };
         } & {
             tokens: ({
                 description?: string | undefined;
@@ -1600,9 +2088,9 @@ export declare const tCurationFieldsSchema: z.ZodObject<{
             } & {
                 tokenMediaItems: {
                     type: string;
+                    url: string;
                     representation: string;
                     mimeType: string;
-                    url: string;
                 }[];
                 tokenUrls: {
                     type: string;
